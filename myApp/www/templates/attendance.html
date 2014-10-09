@@ -1,8 +1,13 @@
-<ion-view title="Attendance">
+<ion-view title="Period 3">
     <ion-nav-buttons side="left">
         <button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
     </ion-nav-buttons>
     <ion-content class="has-header">
-        <h1>Attendance</h1>
+
+        <ion-header-bar align-title="center">
+            <button ng-click="previous()" class="button icon ion-ios7-arrow-thin-left"></button>
+            <h1 class="title">{{date | date:'EEE, dd MMM yyyy'}}</h1>
+            <button ng-click="next()" class="button icon ion-ios7-arrow-thin-right"></button>
+        </ion-header-bar>
     </ion-content>
 </ion-view>
