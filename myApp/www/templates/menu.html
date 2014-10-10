@@ -1,34 +1,34 @@
 <ion-side-menus>
 
   <ion-pane ion-side-menu-content>
-    <ion-nav-bar class="bar-stable nav-title-slide-ios7">
+    <ion-nav-bar class="bar-balanced nav-title-slide-ios7">
       <ion-nav-back-button class="button-clear"><i class="icon ion-ios7-arrow-back"></i> Back</ion-nav-back-button>
     </ion-nav-bar>
     <ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
   </ion-pane>
 
   <ion-side-menu side="left">
-    <header class="bar bar-header bar-stable">
+    <header class="bar bar-header bar-dark">
       <h1 class="title">Paul Jones</h1>
     </header>
-    <ion-content class="has-header">
+    <ion-content class="has-header side-menu">
       <ion-list>
         <ion-item nav-clear menu-close href="#/app/attendance">
           <span  class="icon ion-checkmark-round icon-left"></span>
-            Attendance
-        </ion-item>
+          Attendance
+        </ion-item><!--end Attendance-->
         <ion-item nav-clear menu-close href="#/app/grade_book">
-        <span  class="icon ion-university icon-left"></span>
-          Grade Book
-        </ion-item>
+            <span  class="icon ion-university icon-left"></span>
+            Grade Book
+        </ion-item><!--end Grade Book-->
         <ion-item nav-clear menu-close href="#/app/messaging">
-        <span  class="icon ion-android-forums icon-left"></span>
-         Messaging
-        </ion-item>
+            <span  class="icon ion-android-forums icon-left"></span>
+             Messaging
+        </ion-item><!--end Messaging-->
         <ion-item nav-clear menu-close href="#/app/language">
-         <span  class="icon ion-earth icon-left"></span>
-          Language
-        </ion-item>
+            <span  class="icon ion-earth icon-left"></span>
+            Language
+        </ion-item><!--end Language-->
       </ion-list>
     </ion-content>
   </ion-side-menu>

@@ -21,3 +21,41 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
+.bar.bar-calm{
+  color:$stable;
+  .title{
+    color:$stable;
+  }
+}
+.bar-calm{
+  .button, .button:hover{
+    color:$stable;
+  }
+  .nextBtn, .prevBtn{
+    border:none;
+    font-size:40px;
+  }
+}
+.bar .button.button-icon:before, .bar .button .icon:before, .bar .button.icon:before, .bar .button.icon-left:before, .bar .button.icon-right:before{
+  font-size:30px;
+}
+
+.side-menu {
+  background: $dark;
+
+
+  .item {
+    background: $dark;
+    color: $grey;
+    border-color: $dGrey;
+    a {
+      background: $dark;
+    }
+  }
+}
+
+
+.bar.bar-dark .title {
+  color:$xlGrey;
+}
+
