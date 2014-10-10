@@ -18,4 +18,10 @@ angular.module('starter.controllers', [])
             $scope.date.setDate($scope.date.getDate()-1);
         }
     }
+
+    $scope.periodDrop = function (){
+
+    }
 });
+
+
