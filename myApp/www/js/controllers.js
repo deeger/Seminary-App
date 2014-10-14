@@ -18,4 +18,8 @@ angular.module('starter.controllers', [])
             $scope.date.setDate($scope.date.getDate()-1);
         }
     }
+
+        $scope.test = function () {
+            alert('You clicked me.');
+        }
 });
