@@ -25,6 +25,7 @@ app.controller('AppCtrl', function($scope, periodSvc ,$ionicModal, $timeout) {
         item.Expanded=!item.Expanded;
     }
 
+    //origional call to ger periods
     function init() {
             periodSvc.GetPeriods (function (data) {
                 $scope.periods = data;

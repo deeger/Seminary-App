@@ -57,3 +57,39 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
   color:$xlGrey;
 }
 
+//centers the button
+.bar.nav-bar.bar-balanced .buttons span:nth-child(2){
+  position:absolute;
+  left:50%;
+  margin-left:-52px;
+}
+
+.bar .button.button-icon.icon-right:before{
+  font-size:18px;
+}
+.item{
+  font-size: $font-size-base;
+}
+#pickPeriod {
+  .item{
+    color:$stable;
+    border-color: $lGrey;
+  }
+}
+
+#changePeriod {
+  .list{
+    z-index:11;
+    top:44px;
+    overflow: hidden;
+  }
+  .item{
+    background: $stable;
+    color:$light;
+    border-color:$light;
+  }
+  a{
+    background:none;
+  }
+}
+
