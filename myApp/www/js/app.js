@@ -32,29 +32,32 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 
 
     .state('app.attendance', {
-      url: "/attendance",
+      url: "/attendance?periodId",
       views: {
         'menuContent' :{
-          templateUrl: "templates/attendance.html"
+          templateUrl: "templates/attendance.html",
+          controller: 'attendanceCtrl'
         }
       }
     })
 
 
-    .state('app.grade_book', {
-      url: "/grade_book",
+    .state('app.gradeBook', {
+      url: "/gradeBook?periodId",
       views: {
         'menuContent' :{
-          templateUrl: "templates/grade_book.html"
+          templateUrl: "templates/gradeBook.html",
+          controller: 'gradeBookCtrl'
         }
       }
     })
 
      .state('app.messaging', {
-          url: "/messaging",
+          url: "/messaging?periodId",
           views: {
               'menuContent' :{
-                  templateUrl: "templates/messaging.html"
+                  templateUrl: "templates/messaging.html",
+                  controller: 'messagingCtrl'
               }
           }
       })
@@ -63,7 +66,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
           url: "/language",
           views: {
               'menuContent' :{
-                  templateUrl: "templates/language.html"
+                  templateUrl: "templates/language.html",
+                  controller: 'languageCtrl'
               }
           }
       });
