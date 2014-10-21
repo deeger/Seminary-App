@@ -19,6 +19,11 @@ app.controller('AppCtrl', function($scope, periodSvc ,$ionicModal, $timeout) {
         }
     }
 
+<<<<<<< HEAD
+        $scope.test = function () {
+            alert('You clicked me.');
+        }
+=======
     $scope.changePeriod ={};
 
     $scope.toggleExpanded = function (item){
@@ -62,6 +67,7 @@ app.controller('periodCtrl', function($scope, $stateParams, periodSvc) {
 //attendance page
 app.controller('attendanceCtrl', function($scope, $controller){
     $controller('periodCtrl', {$scope: $scope});
+>>>>>>> upstream/master
 });
 
 //gradebook controller
