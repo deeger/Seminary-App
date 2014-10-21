@@ -2,7 +2,7 @@ var app = angular.module('starter.controllers', []);
 
 app.controller('AppCtrl', function($scope, periodSvc ,$ionicModal, $timeout) {
 
-        $scope.date = new Date();
+    $scope.date = new Date();
 
     $scope.next = function (){
         $scope.date.setDate($scope.date.getDate()+1);
@@ -19,11 +19,6 @@ app.controller('AppCtrl', function($scope, periodSvc ,$ionicModal, $timeout) {
         }
     }
 
-<<<<<<< HEAD
-        $scope.test = function () {
-            alert('You clicked me.');
-        }
-=======
     $scope.changePeriod ={};
 
     $scope.toggleExpanded = function (item){
@@ -32,9 +27,9 @@ app.controller('AppCtrl', function($scope, periodSvc ,$ionicModal, $timeout) {
 
     //origional call to ger periods
     function init() {
-            periodSvc.GetPeriods (function (data) {
-                $scope.periods = data;
-            })
+        periodSvc.GetPeriods (function (data) {
+            $scope.periods = data;
+        })
     }
     init();
 
@@ -44,8 +39,8 @@ app.controller('AppCtrl', function($scope, periodSvc ,$ionicModal, $timeout) {
 
 
     /*$scope.$on('$stateChangeSuccess', function (){
-        $scope.changePeriod.Expanded = false;
-    })*/
+     $scope.changePeriod.Expanded = false;
+     })*/
 
 
 });
@@ -67,7 +62,6 @@ app.controller('periodCtrl', function($scope, $stateParams, periodSvc) {
 //attendance page
 app.controller('attendanceCtrl', function($scope, $controller){
     $controller('periodCtrl', {$scope: $scope});
->>>>>>> upstream/master
 });
 
 //gradebook controller
@@ -115,6 +109,3 @@ app.service('periodSvc', function($http) {
     }
 
 });
-
-
-
