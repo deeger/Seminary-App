@@ -1,12 +1,44 @@
-<ion-view title="Period 3">
+<<<<<<< HEAD
+<ion-view title="Period 03 <span ng-click='test()' class='button button-icon icon ion-chevron-down icon-right'></span>">
+=======
+<ion-view>
+>>>>>>> upstream/master
     <ion-nav-buttons side="left">
-        <button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
+        <span class="buttons">
+            <button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
+        </span>
     </ion-nav-buttons>
+    <ion-nav-buttons>
+            <button id="changePeriodBtn" ng-click='toggleExpanded(changePeriod) ' ng-show='Period' ng-class="{'ion-chevron-down' :!changePeriod.Expanded, 'ion-chevron-up': changePeriod.Expanded}" class='button center button-icon icon icon-right'>
+                Period {{Period.periodNum}}
+            </button>
+    </ion-nav-buttons>
+
+    <!--shows when change period button is clicked-->
+    <ion-list id="changePeriod" ng-show="changePeriod.Expanded">
+        <ion-item ng-repeat="period in periods"  ng-click="changePeriodClose(changePeriod)" ui-sref="app.attendance({periodId:period.periodNum})">
+            Period {{period.periodNum}}
+        </ion-item>
+    </ion-list>
+
+    <ion-header-bar class="dateNav bar-subheader bar-calm" ng-show="Period" na-title-slide-ios7">
+        <button ng-click="previous()"  class="button prevBtn icon ion-arrow-left-c"></button>
+        <h1 class="title">{{date | date:'EEE, dd MMM yyyy'}}</h1>
+        <button ng-click="next()" class="button nextBtn icon ion-arrow-right-c"></button>
+    </ion-header-bar><!--end date Nav-->
+
     <ion-content class="has-header">
-        <ion-header-bar class="bar-calm" align-title="center">
-            <button ng-click="previous()" class="button prevBtn icon ion-arrow-left-c"></button>
-            <h1 class="title">{{date | date:'EEE, dd MMM yyyy'}}</h1>
-            <button ng-click="next()" class="button nextBtn icon ion-arrow-right-c"></button>
-        </ion-header-bar>
+        <!--when no period is chosen-->
+        <ion-list id="pickPeriod" ng-show="!Period">
+            <ion-item ng-repeat="period in periods" ui-sref="app.attendance({periodId:period.periodNum})">
+                Period {{period.periodNum}}
+            </ion-item>
+        </ion-list>
+
+
+        <div class="myContent" ng-show="Period">
+            <div>Number of students in class:{{Period.studentCount}}</div>
+        </div><!--end myContent-->
+
     </ion-content>
 </ion-view>
