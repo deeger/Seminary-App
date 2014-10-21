@@ -7852,9 +7852,11 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
 .item {
   font-size: 18px; }
 
-#pickPeriod .item {
-  color: #33bc95;
-  border-color: #bbbbbb; }
+#pickPeriod {
+  background: blue; }
+  #pickPeriod .item {
+    color: #33bc95;
+    border-color: #bbbbbb; }
 
 #changePeriod .list {
   z-index: 11;

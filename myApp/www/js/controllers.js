@@ -62,6 +62,7 @@ app.controller('periodCtrl', function($scope, $stateParams, periodSvc) {
 //attendance page
 app.controller('attendanceCtrl', function($scope, $controller){
     $controller('periodCtrl', {$scope: $scope});
+    //wire code to display on student attendance page
 });
 
 //gradebook controller
