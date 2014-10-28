@@ -32,9 +32,7 @@ app.controller('languageCtrl', function($scope){
 
 });
 
-app.controller('studentFilesCtrl', function($scope, $controller){
 
-});
 
 
 

@@ -33,7 +33,11 @@
 
 
         <div class="myStudents" ng-show="Period">
-
+            <ion-list id="studentList" ng-show="Period">
+                <ion-item ng-repeat="students in Period.students">
+                    <p>Name: {{student.studentName}}</p>
+                </ion-item>
+            </ion-list>
 
         </div><!--end myStudents-->
 

@@ -72,15 +72,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
                 }
             })
 
-            .state('app.studentFiles', {
-                url: "/studentFiles",
-                views: {
-                    'menuContent' :{
-                        templateUrl: "templates/studentFiles.html",
-                        controller: 'studentFilesCtrl'
-                    }
-                }
-            })
+
         // if none of the above states are matched, use this as the fallback
         $urlRouterProvider.otherwise('/app/attendance');
 
