@@ -1,0 +1,102 @@
+[
+
+    {
+
+        "studentNumber": "1",
+        "studentName": "Vince",
+        "picture": "",
+        "schoolYear": "Senior",
+        "attendancePercent": "90%"
+    },
+
+    {
+
+        "studentNumber": "2",
+        "studentName": "Chang",
+        "picture": "",
+        "schoolYear": "Senior",
+        "attendancePercent": "10%"
+    },
+
+    {
+
+        "studentNumber": "3",
+        "studentName": "Annie",
+        "picture": "",
+        "schoolYear": "Freshman",
+        "attendancePercent": "100%"
+    },
+
+    {
+
+        "studentNumber": "3",
+        "studentName": "Britta",
+        "picture": "",
+        "schoolYear": "Senior",
+        "attendancePercent": "75%"
+    },
+
+    {
+
+        "studentNumber": "4",
+        "studentName": "Troy",
+        "picture": "",
+        "schoolYear": "Freshman",
+        "attendancePercent": "80%"
+    },
+
+    {
+
+        "studentNumber": "5",
+        "studentName": "Jeff",
+        "picture": "",
+        "schoolYear": "Senior",
+        "attendancePercent": "60%"
+    },
+
+    {
+
+        "studentNumber": "6",
+        "studentName": "Abed",
+        "picture": "",
+        "schoolYear": "Sophmore",
+        "attendancePercent": "100%"
+    },
+
+    {
+
+        "studentNumber": "7",
+        "studentName": "Pierce",
+        "picture": "",
+        "schoolYear": "Senior",
+        "attendancePercent": "95%"
+    },
+
+    {
+
+        "studentNumber": "8",
+        "studentName": "Dean",
+        "picture": "",
+        "schoolYear": "Senior",
+        "attendancePercent": "100%"
+    },
+
+    {
+
+        "studentNumber": "9",
+        "studentName": "StarBurns",
+        "picture": "",
+        "schoolYear": "Junior",
+        "attendancePercent": "10%"
+    },
+
+    {
+
+        "studentNumber": "10",
+        "studentName": "Loretta",
+        "picture": "",
+        "schoolYear": "Senior",
+        "attendancePercent": "85%"
+    }
+
+]
