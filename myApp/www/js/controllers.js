@@ -51,6 +51,8 @@ app.controller('periodCtrl', function($scope, $stateParams, periodSvc) {
         if ($stateParams.periodId) {
             periodSvc.GetPeriod($stateParams.periodId, function (data) {
                 $scope.Period = data;
+
+                console.log(data);
             })
         }
     }
