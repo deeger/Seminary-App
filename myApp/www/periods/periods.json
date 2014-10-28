@@ -1,7 +1,46 @@
 [
     {
-      "periodNum": "1",
-      "studentCount": "31"
+        "periodNum": "1",
+        "studentCount": "31",
+        "students":[
+            {
+                "studentId":"1",
+                "studentName": "Vince",
+                "picture": "",
+                "schoolYear": "Senior",
+                "attendancePercent": "90%"
+            },
+            {
+                "studentId":"2",
+                "studentName": "Mike",
+                "picture": "",
+                "schoolYear": "Senior",
+                "attendancePercent": "80%"
+            },
+            {
+                "studentId":"3",
+                "studentName": "Tom",
+                "picture": "",
+                "schoolYear": "Junior",
+                "attendancePercent": "60%"
+            },
+            {
+                "studentId":"4",
+                "studentName": "Rachel",
+                "picture": "",
+                "schoolYear": "Sophomore",
+                "attendancePercent": "90%"
+            },
+            {
+                "studentId":"5",
+                "studentName": "Alice",
+                "picture": "",
+                "schoolYear": "Freshman",
+                "attendancePercent": "30%"
+            }
+        ]
+
+
     },
     {
         "periodNum": "2",
@@ -10,5 +49,7 @@
     {
         "periodNum": "3",
         "studentCount": "30"
+
     }
+
 ]

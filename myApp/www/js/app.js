@@ -6,72 +6,78 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers'])
 
-.run(function($ionicPlatform) {
-  $ionicPlatform.ready(function() {
-    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-    // for form inputs)
-    if(window.cordova && window.cordova.plugins.Keyboard) {
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-    }
-    if(window.StatusBar) {
-      // org.apache.cordova.statusbar required
-      StatusBar.styleDefault();
-    }
-  });
-})
-
-.config(function($stateProvider, $urlRouterProvider) {
-  $stateProvider
-
-    .state('app', {
-      url: "/app",
-      abstract: true,
-      templateUrl: "templates/menu.html",
-      controller: 'AppCtrl'
+    .run(function($ionicPlatform) {
+        $ionicPlatform.ready(function() {
+            // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+            // for form inputs)
+            if(window.cordova && window.cordova.plugins.Keyboard) {
+                cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+            }
+            if(window.StatusBar) {
+                // org.apache.cordova.statusbar required
+                StatusBar.styleDefault();
+            }
+        });
     })
 
+    .config(function($stateProvider, $urlRouterProvider) {
+        $stateProvider
 
-    .state('app.attendance', {
-      url: "/attendance?periodId",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/attendance.html",
-          controller: 'attendanceCtrl'
-        }
-      }
-    })
+            .state('app', {
+                url: "/app",
+                abstract: true,
+                templateUrl: "templates/menu.html",
+                controller: 'AppCtrl'
+            })
 
 
-    .state('app.gradeBook', {
-      url: "/gradeBook?periodId",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/gradeBook.html",
-          controller: 'gradeBookCtrl'
-        }
-      }
-    })
+            .state('app.attendance', {
+                url: "/attendance?periodId",
+                views: {
+                    'menuContent' :{
+                        templateUrl: "templates/attendance.html",
+                        controller: 'attendanceCtrl'
+                    }
+                }
+            })
 
-     .state('app.messaging', {
-          url: "/messaging?periodId",
-          views: {
-              'menuContent' :{
-                  templateUrl: "templates/messaging.html",
-                  controller: 'messagingCtrl'
-              }
-          }
-      })
 
-     .state('app.language', {
-          url: "/language",
-          views: {
-              'menuContent' :{
-                  templateUrl: "templates/language.html",
-                  controller: 'languageCtrl'
-              }
-          }
-      });
-  // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/attendance');
-});
+            .state('app.gradeBook', {
+                url: "/gradeBook?periodId",
+                views: {
+                    'menuContent' :{
+                        templateUrl: "templates/gradeBook.html",
+                        controller: 'gradeBookCtrl'
+                    }
+                }
+            })
+
+            .state('app.messaging', {
+                url: "/messaging?periodId",
+                views: {
+                    'menuContent' :{
+                        templateUrl: "templates/messaging.html",
+                        controller: 'messagingCtrl'
+                    }
+                }
+            })
+
+            .state('app.language', {
+                url: "/language",
+                views: {
+                    'menuContent' :{
+                        templateUrl: "templates/language.html",
+                        controller: 'languageCtrl'
+                    }
+                }
+            })
+
+
+        // if none of the above states are matched, use this as the fallback
+        $urlRouterProvider.otherwise('/app/attendance');
+
+
+
+
+    });
 
