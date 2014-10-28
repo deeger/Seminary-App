@@ -32,9 +32,17 @@
         </ion-list>
 
 
-        <div class="myContent" ng-show="Period">
-            <div>Number of students in class:{{Period.studentCount}}</div>
-        </div><!--end myContent-->
+        <div class="myStudents" ng-show="Period">
+            <ion-list id="studentList" ng-show="Period">
+                <ion-item ng-repeat="student in Period.students">
+                    <div class="fName">{{student.firstName}}</div>
+                    <div class="lName">{{student.lastName}}</div>
+                    <div class="photo">{{student.picture}}</div>
+                    <div class="year">{{student.schoolYear}}</div>
+                    <div class="percent">{{student.attPercent}}</div>
+                </ion-item>
+            </ion-list>
+        </div><!--end myStudents-->
 
     </ion-content>
 </ion-view>
