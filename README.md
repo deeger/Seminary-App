@@ -8,7 +8,9 @@ Instructions for demo:
 
 2. navigate to Seminary-App/myApp
 
-3. in terminal: ionic serve
+3. run npm install
+
+4. in terminal: ionic serve
 
 
 The Command 'ionic serve' will compile all sass and watch folders for changes.  All changes made in html, js, and sass should show in browser immediately.
