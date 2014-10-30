@@ -1,7 +1,7 @@
 var app = angular.module('starter.controllers', []);
 
 app.controller('AppCtrl', function($scope, periodSvc ,$ionicModal, $timeout) {
-
+    window.debugScope = $scope;
     $scope.date = new Date();
 
     $scope.next = function (){
@@ -20,12 +20,17 @@ app.controller('AppCtrl', function($scope, periodSvc ,$ionicModal, $timeout) {
     }
 
     $scope.changePeriod ={};
+    $scope.markers="markers";
 
     $scope.toggleExpanded = function (item){
         item.Expanded=!item.Expanded;
+        console.log(item + " expanded");
     }
 
-    //origional call to ger periods
+
+   // for (var idx = 0; idx < data.length; idx++)
+
+    //original call to ger periods
     function init() {
         periodSvc.GetPeriods (function (data) {
             $scope.periods = data;
@@ -36,12 +41,6 @@ app.controller('AppCtrl', function($scope, periodSvc ,$ionicModal, $timeout) {
     $scope.changePeriodClose = function (changePeriod){
         changePeriod.Expanded = false;
     }
-
-
-    /*$scope.$on('$stateChangeSuccess', function (){
-     $scope.changePeriod.Expanded = false;
-     })*/
-
 
 });
 
@@ -64,6 +63,21 @@ app.controller('periodCtrl', function($scope, $stateParams, periodSvc) {
 //attendance page
 app.controller('attendanceCtrl', function($scope, $controller){
     $controller('periodCtrl', {$scope: $scope});
+    var showMarkers = function(){
+
+    }
+
+    $scope.toggleMarkersExpanded = function (item) {
+        if (!item.Expanded) {
+            var students = $scope.Period.students;
+
+            for (var i = 0; i < students.length; i++) {
+                students[i].markers.Expanded = false;
+            }
+        }
+
+        item.Expanded=!item.Expanded;
+    };
 });
 
 //gradebook controller
@@ -85,7 +99,7 @@ app.controller('languageCtrl', function($scope){
 //all http services defined here.
 app.service('periodSvc', function($http) {
     var cache = {};
-    //stores period info so that it doesnt have to call everytime you switch periods
+    //stores period info so that it doesn't have to call every time you switch periods
     this.GetPeriod = function(periodId, successFunc) {
         if (cache.Periods) {
             for(var i = 0; i < cache.Periods.length; i++) {
@@ -102,6 +116,17 @@ app.service('periodSvc', function($http) {
         var url = 'periods/periods.json';
         $http.get(url, null)
             .success(function(data) {
+                if (data.length > 0) {
+                    for (var idx = 0; idx < data.length; idx++) {
+                        var period = data[idx];
+                        for (var i = 0; i < period.students.length; i++) {
+                            period.students[i].markers = {};
+                        }
+                    }
+                }
+
+
+
                 cache.Periods = data;
                 successFunc(data);
             })

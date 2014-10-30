@@ -40,6 +40,18 @@
                     <div class="photo">{{student.picture}}</div>
                     <div class="year">{{student.schoolYear}}</div>
                     <div class="percent">{{student.attPercent}}</div>
+                    <div class="attMarker">
+                        <div class="activeMark blank" ng-click="toggleMarkersExpanded(student.markers)">--</div>
+                        <div class="markers" ng-show="student.markers.Expanded">
+                            <span class="blank">--</span>
+                            <span class="present">P</span>
+                            <!--<span class="madeUp">M</span>-->
+                            <span class="unexcused">U</span>
+                            <span class="tardy">T</span>
+                            <span class="parentExc">PE</span>
+                            <span class="schoolExc">SE</span>c
+                        </div><!--end .markers-->
+                    </div><!--end .attMarker-->
                 </ion-item>
             </ion-list>
         </div><!--end myStudents-->
