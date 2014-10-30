@@ -41,15 +41,15 @@
                     <div class="year">{{student.schoolYear}}</div>
                     <div class="percent">{{student.attPercent}}</div>
                     <div class="attMarker">
-                        <div class="activeMark blank" ng-click="toggleMarkersExpanded(student.markers)">--</div>
+                        <div class="activeMark blank" ng-click="toggleMarkersExpanded(student.markers)" ng-bind-html="chosenMark">--</div>
                         <div class="markers" ng-show="student.markers.Expanded">
-                            <span class="blank">--</span>
-                            <span class="present">P</span>
-                            <!--<span class="madeUp">M</span>-->
-                            <span class="unexcused">U</span>
-                            <span class="tardy">T</span>
-                            <span class="parentExc">PE</span>
-                            <span class="schoolExc">SE</span>c
+                            <span class="blank" ng-click="chooseMark('blank', student.markers)">--</span>
+                            <span class="present" ng-click="chooseMark('present', student.markers)">P</span>
+                            <!--<span class="madeUp" ng-click="chooseMark('madeUp', student.markers)">M</span>-->
+                            <span class="unexcused" ng-click="chooseMark('unexcused', student.markers)">U</span>
+                            <span class="tardy" ng-click="chooseMark('tardy', student.markers)">T</span>
+                            <span class="parentExc" ng-click="chooseMark('parentExcused', student.markers)">PE</span>
+                            <span class="schoolExc" ng-click="chooseMark('schoolExcused', student.markers)">SE</span>
                         </div><!--end .markers-->
                     </div><!--end .attMarker-->
                 </ion-item>
