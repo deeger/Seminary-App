@@ -7870,7 +7870,7 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
 /*--------Style Student List--------*/
 /*START*/
 #studentList .item {
-  color: #000;
+  color: #333;
   border-color: #bbbbbb; }
 
 .fName {
@@ -7886,17 +7886,17 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
   height: 80px; }
 
 .percent {
-  color: #bbbbbb;
+  color: #888;
   font-size: 0.85em; }
 
 .year {
-  color: #bbbbbb;
+  color: #888;
   font-size: 0.85em; }
 
 .attMarker {
   float: right; }
   .attMarker .activeMark {
-    border: solid 1px #000;
+    border: solid 1px #33bc95;
     border-radius: 5px;
     padding: 0 0.3em; }
 

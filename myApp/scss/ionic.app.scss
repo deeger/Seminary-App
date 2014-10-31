@@ -96,7 +96,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 /*--------Style Student List--------*/
 /*START*/
 #studentList .item {
-  color: #000;
+  color: $dark;
   border-color: $lGrey;
 }
 .fName {
@@ -112,16 +112,16 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
   height: 80px;
 }
 .percent {
-  color: $lGrey;
+  color: $grey;
   font-size: .85em;
 }
 .year {
-  color: $lGrey;
+  color: $grey;
   font-size: .85em;
 }
 .attMarker {
   .activeMark {
-    border: solid 1px #000;
+    border: solid 1px $balanced;
     border-radius: 5px;
     padding: 0 .3em;
   }
