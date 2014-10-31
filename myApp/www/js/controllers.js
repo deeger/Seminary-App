@@ -78,6 +78,13 @@ app.controller('attendanceCtrl', function($scope, $controller){
 
         item.Expanded=!item.Expanded;
     };
+
+    $scope.chosenMark="--";
+    $scope.chooseMark = function (value, item){
+        console.log("attendance marked as " + value);
+        $scope.chosenMark = value;
+        item.Expanded=false;
+    }
 });
 
 //gradebook controller
