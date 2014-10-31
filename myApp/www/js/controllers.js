@@ -67,12 +67,13 @@ app.controller('attendanceCtrl', function($scope, $controller){
 
     }
 
+
     $scope.toggleMarkersExpanded = function (item) {
         if (!item.Expanded) {
             var students = $scope.Period.students;
 
             for (var i = 0; i < students.length; i++) {
-                students[i].markers.Expanded = false;
+                students[i].state.Expanded = false;
             }
         }
 
@@ -80,10 +81,10 @@ app.controller('attendanceCtrl', function($scope, $controller){
     };
 
     $scope.chosenMark="--";
-    $scope.chooseMark = function (value, item){
-        console.log("attendance marked as " + value);
-        $scope.chosenMark = value;
-        item.Expanded=false;
+    $scope.chooseMark = function(student,selMarker){//function (value, item){
+        console.log("attendance marked as " + selMarker);
+        student.state.Chosen = selMarker;
+        student.state.Expanded=false;
     }
 });
 
@@ -101,7 +102,6 @@ app.controller('messagingCtrl', function($scope, $controller){
 app.controller('languageCtrl', function($scope){
 
 });
-
 
 //all http services defined here.
 app.service('periodSvc', function($http) {
@@ -127,12 +127,28 @@ app.service('periodSvc', function($http) {
                     for (var idx = 0; idx < data.length; idx++) {
                         var period = data[idx];
                         for (var i = 0; i < period.students.length; i++) {
-                            period.students[i].markers = {};
+                            var student = period.students[i];
+                            var useOptions = [ {
+                                Disp:"--",
+                                Val:"none"
+                            },
+                            {
+                                Disp:"PE",
+                                Val:"PE"
+                            },
+                            {
+                                Disp:"UEX",
+                                Val:"UEX"
+                            }];
+                            student.state = {
+                                Expanded:false,
+                                Options:useOptions,//student.options,//["--","PE","UEX"],
+                                Chosen:useOptions[0]//student.options[0]//"--"
+                            };
+                            //student.marker="--";
                         }
                     }
                 }
-
-
 
                 cache.Periods = data;
                 successFunc(data);
