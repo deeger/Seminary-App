@@ -93,3 +93,39 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
   }
 }
 
+/*--------Style Student List--------*/
+/*START*/
+#studentList .item {
+  color: $dark;
+  border-color: $lGrey;
+}
+.fName {
+  display: inline;
+}
+.lName {
+  font-weight: bold;
+  display: inline;
+}
+.photo img{
+  float: left;
+  margin-right: .5em;
+  height: 80px;
+}
+.percent {
+  color: $grey;
+  font-size: .85em;
+}
+.year {
+  color: $grey;
+  font-size: .85em;
+}
+.attMarker {
+  .activeMark {
+    border: solid 1px $balanced;
+    border-radius: 5px;
+    padding: 0 .3em;
+  }
+  float: right;
+}
+/*END*/
+
