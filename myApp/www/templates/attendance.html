@@ -37,9 +37,9 @@
                 <ion-item ng-repeat="student in Period.students">
                     <div class="fName">{{student.firstName}}</div>
                     <div class="lName">{{student.lastName}}</div>
-                    <div class="photo">{{student.picture}}</div>
+                    <div class="photo"><img src="{{student.picture}}" ></div>
+                    <div class="percent">{{student.attPercent}}%</div>
                     <div class="year">{{student.schoolYear}}</div>
-                    <div class="percent">{{student.attPercent}}</div>
                     <div class="attMarker">
                         <div class="activeMark blank" ng-click="toggleMarkersExpanded(student.markers)" ng-bind-html="chosenMark">--</div>
                         <div class="markers" ng-show="student.markers.Expanded">

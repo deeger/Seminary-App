@@ -7,7 +7,7 @@
               "studentId":"1",
               "firstName":"Vincent",
               "lastName":"Price",
-              "picture":"",
+              "picture":"img/studentPictures/noPhoto.jpg",
               "schoolYear":"Senior",
               "attPercent":"94"
           },
@@ -15,7 +15,7 @@
               "studentId":"2",
               "firstName":"Gandalf",
               "lastName":"Grey",
-              "picture":"",
+              "picture":"img/studentPictures/gandalf.jpg",
               "schoolYear":"Senior",
               "attPercent":"99"
           },
@@ -23,7 +23,7 @@
               "studentId":"3",
               "firstName":"Carry",
               "lastName":"Walsch",
-              "picture":"",
+              "picture":"img/studentPictures/picture2.jpg",
               "schoolYear":"Senior",
               "attPercent":"78"
           },
@@ -31,7 +31,7 @@
               "studentId":"4",
               "firstName":"John",
               "lastName":"Elway",
-              "picture":"",
+              "picture":"img/studentPictures/noPhoto.jpg",
               "schoolYear":"Junior",
               "attPercent":"07"
           },
@@ -39,7 +39,7 @@
               "studentId":"5",
               "firstName":"Payton",
               "lastName":"Manning",
-              "picture":"",
+              "picture":"img/studentPictures/Peyton.jpg",
               "schoolYear":"Sophomore",
               "attPercent":"14"
           },
@@ -47,15 +47,15 @@
               "studentId":"6",
               "firstName":"Homer",
               "lastName":"Simpson",
-              "picture":"",
+              "picture":"img/studentPictures/homer.jpg",
               "schoolYear":"Freshman",
               "attPercent":"94"
           },
           {
               "studentId":"7",
-              "firstName":"Vincent",
-              "lastName":"Price",
-              "picture":"",
+              "firstName":"Steve",
+              "lastName":"Young",
+              "picture":"img/studentPictures/noPhoto.jpg",
               "schoolYear":"Junior",
               "attPercent":"94"
           },
@@ -63,7 +63,7 @@
               "studentId":"8",
               "firstName":"Stuart",
               "lastName":"Little",
-              "picture":"",
+              "picture":"img/studentPictures/noPhoto.jpg",
               "schoolYear":"Sophomore",
               "attPercent":"75"
           },
@@ -71,7 +71,7 @@
               "studentId":"9",
               "firstName":"Annabelle",
               "lastName":"Doll",
-              "picture":"",
+              "picture":"img/studentPictures/doll.jpg",
               "schoolYear":"Freshman",
               "attPercent":"100"
           },
@@ -79,7 +79,7 @@
               "studentId":"10",
               "firstName":"Victoria",
               "lastName":"Secret",
-              "picture":"",
+              "picture":"img/studentPictures/noPhoto.jpg",
               "schoolYear":"Junior",
               "attPercent":"88"
           }
@@ -95,7 +95,7 @@
                 "studentId":"22",
                 "firstName":"Winston",
                 "lastName":"Churchhill",
-                "picture":"",
+                "picture":"img/studentPictures/winston.jpg",
                 "schoolYear":"Senior",
                 "attPercent":"89"
             },
@@ -103,7 +103,7 @@
                 "studentId":"23",
                 "firstName":"Leonardo",
                 "lastName":"Davinci",
-                "picture":"",
+                "picture":"img/studentPictures/noPhoto.jpg",
                 "schoolYear":"Senior",
                 "attPercent":"95"
             },
@@ -111,7 +111,7 @@
                 "studentId":"24",
                 "firstName":"Jamal",
                 "lastName":"Williams",
-                "picture":"",
+                "picture":"img/studentPictures/jamal.jpg",
                 "schoolYear":"Senior",
                 "attPercent":"90"
             },
@@ -119,7 +119,7 @@
                 "studentId":"25",
                 "firstName":"Paul",
                 "lastName":"Lasike",
-                "picture":"",
+                "picture":"img/studentPictures/noPhoto.jpg",
                 "schoolYear":"Junior",
                 "attPercent":"85"
             },
@@ -127,7 +127,7 @@
                 "studentId":"26",
                 "firstName":"Mitch",
                 "lastName":"Mathews",
-                "picture":"",
+                "picture":"img/studentPictures/noPhoto.jpg",
                 "schoolYear":"Sophomore",
                 "attPercent":"80"
             },
@@ -135,7 +135,7 @@
                 "studentId":"27",
                 "firstName":"Michael",
                 "lastName":"Alisa",
-                "picture":"",
+                "picture":"img/studentPictures/alisa.jpg",
                 "schoolYear":"Freshman",
                 "attPercent":"77"
             },
@@ -143,7 +143,7 @@
                 "studentId":"28",
                 "firstName":"Craig",
                 "lastName":"Bills",
-                "picture":"",
+                "picture":"img/studentPictures/picture1.jpg",
                 "schoolYear":"Junior",
                 "attPercent":"96"
             },
@@ -151,7 +151,7 @@
                 "studentId":"29",
                 "firstName":"Alani",
                 "lastName":"Fua",
-                "picture":"",
+                "picture":"img/studentPictures/noPhoto.jpg",
                 "schoolYear":"Sophomore",
                 "attPercent":"100"
             },
@@ -159,7 +159,7 @@
                 "studentId":"30",
                 "firstName":"Adam",
                 "lastName":"Hine",
-                "picture":"",
+                "picture":"img/studentPictures/noPhoto.jpg",
                 "schoolYear":"Freshman",
                 "attPercent":"100"
             },
@@ -167,7 +167,7 @@
                 "studentId":"31",
                 "firstName":"Dallin",
                 "lastName":"Leavitt",
-                "picture":"",
+                "picture":"img/studentPictures/picture6.jpg",
                 "schoolYear":"Junior",
                 "attPercent":"93"
             },
@@ -175,7 +175,7 @@
                 "studentId":"32",
                 "firstName":"Skye",
                 "lastName":"PoVey",
-                "picture":"",
+                "picture":"img/studentPictures/noPhoto.jpg",
                 "schoolYear":"Junior",
                 "attPercent":"50"
             },
@@ -183,7 +183,7 @@
                 "studentId":"33",
                 "firstName":"Bronco",
                 "lastName":"Mendenhal",
-                "picture":"",
+                "picture":"img/studentPictures/bronco.jpg",
                 "schoolYear":"Junior",
                 "attPercent":"72"
             }
@@ -199,7 +199,7 @@
                 "studentId":"11",
                 "firstName":"Taysom",
                 "lastName":"Hill",
-                "picture":"",
+                "picture":"img/studentPictures/picture6.jpg",
                 "schoolYear":"Senior",
                 "attPercent":"83"
             },
@@ -207,7 +207,7 @@
                 "studentId":"12",
                 "firstName":"Severus",
                 "lastName":"Snape",
-                "picture":"",
+                "picture":"img/studentPictures/snape.jpg",
                 "schoolYear":"Senior",
                 "attPercent":"90"
             },
@@ -215,7 +215,7 @@
                 "studentId":"13",
                 "firstName":"George",
                 "lastName":"Weasley",
-                "picture":"",
+                "picture":"img/studentPictures/noPhoto.jpg",
                 "schoolYear":"Senior",
                 "attPercent":"80"
             },
@@ -223,7 +223,7 @@
                 "studentId":"14",
                 "firstName":"Fred",
                 "lastName":"Weasley",
-                "picture":"",
+                "picture":"img/studentPictures/picture9.jpg",
                 "schoolYear":"Junior",
                 "attPercent":"59"
             },
@@ -231,7 +231,7 @@
                 "studentId":"15",
                 "firstName":"Ron",
                 "lastName":"Weasley",
-                "picture":"",
+                "picture":"img/studentPictures/picture7.jpg",
                 "schoolYear":"Sophomore",
                 "attPercent":"82"
             },
@@ -239,7 +239,7 @@
                 "studentId":"16",
                 "firstName":"Eli",
                 "lastName":"Manning",
-                "picture":"",
+                "picture":"img/studentPictures/eli.jpg",
                 "schoolYear":"Freshman",
                 "attPercent":"95"
             },
@@ -247,7 +247,7 @@
                 "studentId":"17",
                 "firstName":"Walter",
                 "lastName":"Mitty",
-                "picture":"",
+                "picture":"img/studentPictures/picture4.jpg",
                 "schoolYear":"Junior",
                 "attPercent":"94"
             },
@@ -255,7 +255,7 @@
                 "studentId":"18",
                 "firstName":"Walter",
                 "lastName":"Payton",
-                "picture":"",
+                "picture":"img/studentPictures/noPhoto.jpg",
                 "schoolYear":"Sophomore",
                 "attPercent":"100"
             },
@@ -263,7 +263,7 @@
                 "studentId":"19",
                 "firstName":"Elmo",
                 "lastName":"Monster",
-                "picture":"",
+                "picture":"img/studentPictures/noPhoto.jpg",
                 "schoolYear":"Freshman",
                 "attPercent":"66"
             },
@@ -271,7 +271,7 @@
                 "studentId":"20",
                 "firstName":"Steve",
                 "lastName":"Carell",
-                "picture":"",
+                "picture":"img/studentPictures/picture10.jpg",
                 "schoolYear":"Junior",
                 "attPercent":"74"
             },
@@ -279,7 +279,7 @@
                 "studentId":"21",
                 "firstName":"Stephanie",
                 "lastName":"Meyers",
-                "picture":"",
+                "picture":"img/studentPictures/picture5.jpg",
                 "schoolYear":"Junior",
                 "attPercent":"83"
             }
