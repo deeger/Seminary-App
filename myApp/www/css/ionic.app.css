@@ -7868,7 +7868,6 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
   background: none; }
 
 /*--------Style Student List--------*/
-/*START*/
 #studentList .item {
   color: #333;
   border-color: #bbbbbb; }
@@ -7899,5 +7898,3 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
     border: solid 1px #33bc95;
     border-radius: 5px;
     padding: 0 0.3em; }
-
-/*END*/
