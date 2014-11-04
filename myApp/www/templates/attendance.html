@@ -5,7 +5,10 @@
         </span>
     </ion-nav-buttons>
     <ion-nav-buttons>
-        <button id="changePeriodBtn" ng-click='toggleExpanded(changePeriod) ' ng-show='Period' ng-class="{'ion-chevron-down' :!changePeriod.Expanded, 'ion-chevron-up': changePeriod.Expanded}" class='button center button-icon icon icon-right'>
+        <button id="changePeriodBtn"
+                ng-click='toggleExpanded(changePeriod)'
+                ng-show='Period' ng-class="{'ion-chevron-down' :!changePeriod.Expanded, 'ion-chevron-up': changePeriod.Expanded}"
+                class='button center button-icon icon icon-right'>
             Period {{Period.periodNum}}
         </button>
     </ion-nav-buttons>
@@ -44,11 +47,12 @@
                     <div class="attMarker">
                         <div class="activeMark {{student.state.Chosen.Val}}" ng-click="toggleMarkersExpanded(student.state)">{{student.state.Chosen.Disp}}</div>
                         <div class="markers" ng-show="student.state.Expanded">
-                            <span ng-repeat="option in student.state.Options" class="{{option.Val}}" ng-click="chooseMark(student,option)">{{option.Disp}}</span>
-                            <!--
-                            <span class="blank" ng-click="chooseMark(student,'--', student.markers)">--</span>
+                            <span ng-repeat="option in student.state.Options"
+                                  class="{{option.Val}}"
+                                  ng-click="chooseMark(student,option)">{{option.Disp}}
+                            </span>
+                            <!--<span class="blank" ng-click="chooseMark(student,'--', student.markers)">--</span>
                             <span class="present" ng-click="chooseMark(student,'P', student.markers)">P</span>
-
                             <span class="unexcused" ng-click="chooseMark(student,'U', student.markers)">U</span>
                             <span class="tardy" ng-click="chooseMark(student,'T', student.markers)">T</span>
                             <span class="parentExc" ng-click="chooseMark(student,'PE', student.markers)">PE</span>

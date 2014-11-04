@@ -133,19 +133,30 @@ app.service('periodSvc', function($http) {
                                 Val:"none"
                             },
                             {
-                                Disp:"PE",
-                                Val:"PE"
+                                Disp:"P",
+                                Val:"present"
                             },
                             {
-                                Disp:"UEX",
-                                Val:"UEX"
+                                Disp:"U",
+                                Val:"unexcused"
+                            },
+                            {
+                                Disp:"T",
+                                Val:"tardy"
+                            },
+                            {
+                                Disp:"PE",
+                                Val:"parentExcused"
+                            },
+                            {
+                                Disp:"SE",
+                                Val:"schoolExcused"
                             }];
                             student.state = {
                                 Expanded:false,
-                                Options:useOptions,//student.options,//["--","PE","UEX"],
-                                Chosen:useOptions[0]//student.options[0]//"--"
+                                Options:useOptions,//student.options     <--use when data moves to json or backend
+                                Chosen:useOptions[0]//student.options[0] <--use when data moves to json or backend
                             };
-                            //student.marker="--";
                         }
                     }
                 }
