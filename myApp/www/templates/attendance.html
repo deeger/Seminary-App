@@ -39,11 +39,13 @@
         <div class="myStudents" ng-show="Period">
             <ion-list id="studentList" ng-show="Period">
                 <ion-item ng-repeat="student in Period.students">
-                    <div class="fName">{{student.firstName}}</div>
-                    <div class="lName">{{student.lastName}}</div>
-                    <div class="photo"><img src="{{student.picture}}" ></div>
-                    <div class="percent">{{student.attPercent}}%</div>
-                    <div class="year">{{student.schoolYear}}</div>
+                    <a href="#/app/student">
+                        <div class="fName">{{student.firstName}}</div>
+                        <div class="lName">{{student.lastName}}</div>
+                        <div class="photo"><img src="{{student.picture}}" ></div>
+                        <div class="percent">{{student.attPercent}}%</div>
+                        <div class="year">{{student.schoolYear}}</div>
+                    </a>
                     <div class="attMarker">
                         <div class="activeMark {{student.state.Chosen.Val}}" ng-click="toggleMarkersExpanded(student.state)">{{student.state.Chosen.Disp}}</div>
                         <div class="markers" ng-show="student.state.Expanded">

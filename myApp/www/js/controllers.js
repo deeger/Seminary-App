@@ -88,6 +88,12 @@ app.controller('attendanceCtrl', function($scope, $controller){
     }
 });
 
+//student controller
+app.controller('studentCtrl', function($scope, $controller){
+    $controller('periodCtrl', {$scope: $scope});
+    //code for student page
+});
+
 //gradebook controller
 app.controller('gradeBookCtrl', function($scope, $controller){
     $controller('periodCtrl', {$scope: $scope});
@@ -165,7 +171,7 @@ app.service('periodSvc', function($http) {
                 successFunc(data);
             })
             .error(function(data){
-                console.log("errorQQ");
+                console.log("get error");
             });
     }
 
