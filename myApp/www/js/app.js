@@ -63,7 +63,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       })
 
       .state('app.student', {
-          url: "/student?studentId",
+          url: "/student/:studentId",
           views: {
               'menuContent' :{
                   templateUrl: "templates/student.html",

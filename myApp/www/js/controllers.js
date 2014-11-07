@@ -89,9 +89,11 @@ app.controller('attendanceCtrl', function($scope, $controller){
 });
 
 //student controller
-app.controller('studentCtrl', function($scope, $controller){
+app.controller('studentCtrl', function($scope, $stateParams, $controller){
     $controller('periodCtrl', {$scope: $scope});
     //code for student page
+    console.log("$stateParams: ", $stateParams);
+    var studentId = $stateParams.studentId;
 });
 
 //gradebook controller

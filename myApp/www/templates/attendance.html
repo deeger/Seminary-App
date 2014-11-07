@@ -39,7 +39,7 @@
         <div class="myStudents" ng-show="Period">
             <ion-list id="studentList" ng-show="Period">
                 <ion-item ng-repeat="student in Period.students">
-                    <a href="#/app/student">
+                    <a href="#/app/student/{{student.studentId}}"><!--add parameters to pass in student id-->
                         <div class="fName">{{student.firstName}}</div>
                         <div class="lName">{{student.lastName}}</div>
                         <div class="photo"><img src="{{student.picture}}" ></div>
