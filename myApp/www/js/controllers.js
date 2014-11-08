@@ -61,6 +61,16 @@ app.controller('periodCtrl', function($scope, $stateParams, periodSvc) {
 ///////page controllers; all except language requires the period controller///////
 
 //attendance page
+
+//Vince's Code, Hiding/Showing student info
+app.controller('toggleStudents',['$scope', function($scope){
+    $scope.hide = true;
+    $scope.toggleCustom = function() {
+        $scope.hide = $scope.hide === false ? true: false;
+    };
+}]);
+
+
 app.controller('attendanceCtrl', function($scope, $controller){
     $controller('periodCtrl', {$scope: $scope});
     var showMarkers = function(){

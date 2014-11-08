@@ -38,9 +38,17 @@
 
         <div class="myStudents" ng-show="Period">
             <ion-list id="studentList" ng-show="Period">
+
+                <!-- Vince's code, Show/Hide Student info-->
                 <ion-item ng-repeat="student in Period.students">
-                    <div class="fName">{{student.firstName}}</div>
-                    <div class="lName">{{student.lastName}}</div>
+
+                    <div ng-controller="toggleStudents">
+                        <div class="fName" ng-click="toggleCustom()">{{student.firstName}} {{student.lastName}}</div>
+
+                        <span ng-hide="hide">
+
+
+
                     <div class="photo"><img src="{{student.picture}}" ></div>
                     <div class="percent">{{student.attPercent}}%</div>
                     <div class="year">{{student.schoolYear}}</div>
@@ -57,8 +65,11 @@
                             <span class="tardy" ng-click="chooseMark(student,'T', student.markers)">T</span>
                             <span class="parentExc" ng-click="chooseMark(student,'PE', student.markers)">PE</span>
                             <span class="schoolExc" ng-click="chooseMark(student,'SE', student.markers)">SE</span>-->
-                        </div><!--end .markers-->
-                    </div><!--end .attMarker-->
+                        </div>
+                    </div><!--end .markers-->
+                    </div>
+                    </span>
+        </div><!--end .attMarker-->
                 </ion-item>
             </ion-list>
         </div><!--end myStudents-->
