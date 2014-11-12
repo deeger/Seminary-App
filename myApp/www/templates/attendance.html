@@ -40,10 +40,14 @@
             <ion-list id="studentList" ng-show="Period">
 
                 <!-- Vince's code, Show/Hide Student info-->
+
+                <div ng-controller="toggleStudents">
+
+                    <button ng-click="toggleCustom()">Expanded View</button>
                 <ion-item ng-repeat="student in Period.students">
 
-                    <div ng-controller="toggleStudents">
-                        <div class="fName" ng-click="toggleCustom()">{{student.firstName}} {{student.lastName}}</div>
+                    <div class="fName">{{student.firstName}}</div>
+                    <div class="lName">{{student.lastName}}</div>
 
                         <span ng-hide="hide">
 

@@ -10,8 +10,79 @@
               "picture":"img/studentPictures/noPhoto.jpg",
               "schoolYear":"Senior",
               "attPercent":"94"
-          }
-
+          },
+    {
+        "studentId":"2",
+        "firstName":"Gandalf",
+        "lastName":"Grey",
+        "picture":"img/studentPictures/gandalf.jpg",
+        "schoolYear":"Senior",
+        "attPercent":"99"
+    },
+    {
+        "studentId":"3",
+        "firstName":"Carry",
+        "lastName":"Walsch",
+        "picture":"img/studentPictures/picture2.jpg",
+        "schoolYear":"Senior",
+        "attPercent":"78"
+    },
+    {
+        "studentId":"4",
+        "firstName":"John",
+        "lastName":"Elway",
+        "picture":"img/studentPictures/noPhoto.jpg",
+        "schoolYear":"Junior",
+        "attPercent":"07"
+    },
+    {
+        "studentId":"5",
+        "firstName":"Payton",
+        "lastName":"Manning",
+        "picture":"img/studentPictures/Peyton.jpg",
+        "schoolYear":"Sophomore",
+        "attPercent":"14"
+    },
+    {
+        "studentId":"6",
+        "firstName":"Homer",
+        "lastName":"Simpson",
+        "picture":"img/studentPictures/homer.jpg",
+        "schoolYear":"Freshman",
+        "attPercent":"94"
+    },
+    {
+        "studentId":"7",
+        "firstName":"Steve",
+        "lastName":"Young",
+        "picture":"img/studentPictures/noPhoto.jpg",
+        "schoolYear":"Junior",
+        "attPercent":"94"
+    },
+    {
+        "studentId":"8",
+        "firstName":"Stuart",
+        "lastName":"Little",
+        "picture":"img/studentPictures/noPhoto.jpg",
+        "schoolYear":"Sophomore",
+        "attPercent":"75"
+    },
+    {
+        "studentId":"9",
+        "firstName":"Annabelle",
+        "lastName":"Doll",
+        "picture":"img/studentPictures/doll.jpg",
+        "schoolYear":"Freshman",
+        "attPercent":"100"
+    },
+    {
+        "studentId": "10",
+        "firstName": "Victoria",
+        "lastName": "Secret",
+        "picture": "img/studentPictures/noPhoto.jpg",
+        "schoolYear": "Junior",
+        "attPercent": "88"
+    }
       ]
     },
 
