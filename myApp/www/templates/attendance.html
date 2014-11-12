@@ -44,6 +44,7 @@
                 <div ng-controller="toggleStudents">
 
                     <button ng-click="toggleCustom()">Expanded View</button>
+
                 <ion-item ng-repeat="student in Period.students">
 
                     <div class="fName">{{student.firstName}}</div>
@@ -71,11 +72,15 @@
                             <span class="schoolExc" ng-click="chooseMark(student,'SE', student.markers)">SE</span>-->
                         </div>
                     </div><!--end .markers-->
-                    </div>
+
+
                     </span>
-        </div><!--end .attMarker-->
                 </ion-item>
+                </div>
             </ion-list>
+        </div><!--end .attMarker-->
+
+
         </div><!--end myStudents-->
 
     </ion-content>
