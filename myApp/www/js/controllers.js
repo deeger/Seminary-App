@@ -1,23 +1,74 @@
 var app = angular.module('starter.controllers', []);
 
-app.controller('AppCtrl', function($scope, periodSvc ,$ionicModal, $timeout) {
+app.controller('AppCtrl', function($scope, periodSvc ,$ionicModal, $timeout, $http) {
     window.debugScope = $scope;
-    $scope.date = new Date();
+
+    /*$scope.date = new Date();
+
+     $scope.next = function (){
+     $scope.date.setDate($scope.date.getDate()+1);
+     while($scope.date.getDay() == 6 || $scope.date.getDay() == 0)
+     {
+     $scope.date.setDate($scope.date.getDate()+1);
+     }
+     }
+     $scope.previous = function (){
+     $scope.date.setDate($scope.date.getDate()-1);
+     while($scope.date.getDay() == 6 || $scope.date.getDay() == 0)
+     {
+     $scope.date.setDate($scope.date.getDate()-1);
+     }
+     }
+     */
+
+    //Date Functionality
+    $scope.initPeriod = function(periodId) {
+        $http.get('periods/days.json')
+            .success(function (data) {
+                $scope.dayData = data;
+                var today = new Date();
+                $scope.periodId = periodId;
+                for(var i = 0; i < data.length; i++){
+                    var parts = data[i].date.split("-");
+                    var newDate = new Date([parts[0], parts[1],parts[2]]);
+                    if(newDate.getDate() >= today.getDate() && data[i].dayType == periodId.classSchedule){
+                        $scope.date = data[i].date;
+                        break;
+                    }
+                }
+            }) .error(function () {
+                alert("error");
+            });
+    }
+
+
 
     $scope.next = function (){
-        $scope.date.setDate($scope.date.getDate()+1);
-        while($scope.date.getDay() == 6 || $scope.date.getDay() == 0)
-        {
-            $scope.date.setDate($scope.date.getDate()+1);
+        for(var i = 0; i < $scope.dayData.length; i++){
+            if($scope.dayData[i].date > $scope.date){
+                if($scope.dayData[i].dayType == $scope.periodId.classSchedule){
+                    $scope.date = $scope.dayData[i].date;
+                    break;
+                }
+            }
         }
     }
+
     $scope.previous = function (){
-        $scope.date.setDate($scope.date.getDate()-1);
-        while($scope.date.getDay() == 6 || $scope.date.getDay() == 0)
-        {
-            $scope.date.setDate($scope.date.getDate()-1);
+        for(var i = $scope.dayData.length - 1; i > 0; i--){
+            if($scope.dayData[i].date < $scope.date){
+                if($scope.dayData[i].dayType == $scope.periodId.classSchedule){
+                    $scope.date = $scope.dayData[i].date;
+                    break;
+                }
+            }
         }
     }
+
+
+
+//end Date
+
 
     $scope.changePeriod ={};
     $scope.markers="markers";
@@ -38,8 +89,9 @@ app.controller('AppCtrl', function($scope, periodSvc ,$ionicModal, $timeout) {
     }
     init();
 
-    $scope.changePeriodClose = function (changePeriod){
+    $scope.changePeriodClose = function (changePeriod, period){
         changePeriod.Expanded = false;
+        $scope.initPeriod(period);
     }
 
 });
@@ -165,7 +217,7 @@ app.service('periodSvc', function($http) {
                 successFunc(data);
             })
             .error(function(data){
-                console.log("errorQQ");
+                console.log("error");
             });
     }
 

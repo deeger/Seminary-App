@@ -1,6 +1,7 @@
 [
     {
       "periodNum": "1",
+      "classSchedule": "A",
       "studentCount": "10",
       "students":[
           {
@@ -89,6 +90,7 @@
 
     {
         "periodNum": "2",
+        "classSchedule": "B",
         "studentCount": "12",
         "students":[
             {
@@ -194,6 +196,7 @@
 
     {
         "periodNum": "3",
+        "classSchedule": "A",
         "studentCount": "11",
         "students":[
             {
