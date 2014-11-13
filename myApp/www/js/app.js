@@ -69,7 +69,12 @@ angular.module('starter', ['ionic', 'starter.controllers'])
                   templateUrl: "templates/student.html",
                   controller: 'studentCtrl'
               }
-          }
+          }/*,
+          resolve: {
+              '$studentValue' : function($myDataService,$stateParams) {
+                  return $myDataService.getStudentValue($stateParams.id)
+              }
+          }*/
       })
 
      .state('app.language', {

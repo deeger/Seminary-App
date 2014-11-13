@@ -56,9 +56,8 @@ app.controller('periodCtrl', function($scope, $stateParams, periodSvc) {
         }
     }
     init();
-});
+});//end period controller
 
-///////page controllers; all except language requires the period controller///////
 
 //attendance page
 app.controller('attendanceCtrl', function($scope, $controller){
@@ -86,30 +85,40 @@ app.controller('attendanceCtrl', function($scope, $controller){
         student.state.Chosen = selMarker;
         student.state.Expanded=false;
     }
-});
+});//end attendance controller
 
 //student controller
 app.controller('studentCtrl', function($scope, $stateParams, $controller){
     $controller('periodCtrl', {$scope: $scope});
-    //code for student page
-    console.log("$stateParams: ", $stateParams);
-    var studentId = $stateParams.studentId;
-});
+    console.log("Student ID: ", $stateParams);
+
+    var db = new PouchDB('https://deeger:Misured.9945@dgm3790.iriscouch.com/seminary_db');
+
+    //post=create  put=update-needs ID
+    db.post({
+        "name": "seminary_db test"
+    }).then;
+
+    db.changes().on('change', function(){
+        console.log('changing DB')
+    });
+
+});//end student controller
 
 //gradebook controller
 app.controller('gradeBookCtrl', function($scope, $controller){
     $controller('periodCtrl', {$scope: $scope});
-});
+});//end gradebook controller
 
 //messaging controller
 app.controller('messagingCtrl', function($scope, $controller){
     $controller('periodCtrl', {$scope: $scope});
-});
+});//end messaging controller
 
 //language controller
 app.controller('languageCtrl', function($scope){
 
-});
+});//end language controller
 
 //all http services defined here.
 app.service('periodSvc', function($http) {
