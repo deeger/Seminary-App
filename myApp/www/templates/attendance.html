@@ -57,6 +57,7 @@
                     <div class="photo"><img src="{{student.picture}}" ></div>
                     <div class="percent">{{student.attPercent}}%</div>
                     <div class="year">{{student.schoolYear}}</div>
+                            </span>
                     <div class="attMarker">
                         <div class="activeMark {{student.state.Chosen.Val}}" ng-click="toggleMarkersExpanded(student.state)">{{student.state.Chosen.Disp}}</div>
                         <div class="markers" ng-show="student.state.Expanded">
@@ -74,7 +75,7 @@
                     </div><!--end .markers-->
 
 
-                    </span>
+
                 </ion-item>
                 </div>
             </ion-list>
