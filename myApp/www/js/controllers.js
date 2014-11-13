@@ -55,7 +55,7 @@ app.controller('AppCtrl', function($scope, periodSvc ,$ionicModal, $timeout, $ht
     }
 
     $scope.previous = function (){
-        for(var i = $scope.dayData.length - 1; i > 0; i--){
+        for(var i = $scope.dayData.length - 1; i >= 0; i--){
             if($scope.dayData[i].date < $scope.date){
                 if($scope.dayData[i].dayType == $scope.periodId.classSchedule){
                     $scope.date = $scope.dayData[i].date;
