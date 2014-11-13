@@ -35,35 +35,32 @@
             </ion-item>
         </ion-list>
 
-
         <div class="myStudents" ng-show="Period">
-            <ion-list id="studentList" ng-show="Period">
-                <ion-item ng-repeat="student in Period.students">
-                    <a href="#/app/student/{{student.studentId}}"><!--add parameters to pass in student id-->
+            <div ng-controller="toggleStudents">
+                <button ng-click="toggleCustom()">Expanded View</button>
+                <ion-list id="studentList" ng-show="Period">
+                    <ion-item ng-repeat="student in Period.students">
+                        <a href="#/app/student/{{student.studentId}}">
                         <div class="fName">{{student.firstName}}</div>
-                        <div class="lName">{{student.lastName}}</div>
-                        <div class="photo"><img src="{{student.picture}}" ></div>
-                        <div class="percent">{{student.attPercent}}%</div>
-                        <div class="year">{{student.schoolYear}}</div>
-                    </a>
-                    <div class="attMarker">
-                        <div class="activeMark {{student.state.Chosen.Val}}" ng-click="toggleMarkersExpanded(student.state)">{{student.state.Chosen.Disp}}</div>
-                        <div class="markers" ng-show="student.state.Expanded">
-                            <span ng-repeat="option in student.state.Options"
-                                  class="{{option.Val}}"
-                                  ng-click="chooseMark(student,option)">{{option.Disp}}
-                            </span>
-                            <!--<span class="blank" ng-click="chooseMark(student,'--', student.markers)">--</span>
-                            <span class="present" ng-click="chooseMark(student,'P', student.markers)">P</span>
-                            <span class="unexcused" ng-click="chooseMark(student,'U', student.markers)">U</span>
-                            <span class="tardy" ng-click="chooseMark(student,'T', student.markers)">T</span>
-                            <span class="parentExc" ng-click="chooseMark(student,'PE', student.markers)">PE</span>
-                            <span class="schoolExc" ng-click="chooseMark(student,'SE', student.markers)">SE</span>-->
-                        </div><!--end .markers-->
-                    </div><!--end .attMarker-->
-                </ion-item>
-            </ion-list>
+                            <div class="lName">{{student.lastName}}</div>
+                            <span ng-hide="hide">
+                                <div class="photo"><img src="{{student.picture}}" ></div>
+                                <div class="percent">{{student.attPercent}}%</div>
+                                <div class="year">{{student.schoolYear}}</div>
+                            </span><!--end hide span-->
+                        </a>
+                        <div class="attMarker">
+                            <div class="activeMark {{student.state.Chosen.Val}}" ng-click="toggleMarkersExpanded(student.state)">{{student.state.Chosen.Disp}}</div>
+                            <div class="markers" ng-show="student.state.Expanded">
+                                <span ng-repeat="option in student.state.Options"
+                                      class="{{option.Val}}"
+                                      ng-click="chooseMark(student,option)">{{option.Disp}}
+                                </span>
+                            </div><!--end .markers-->
+                        </div><!--end attMarker-->
+                    </ion-item>
+                </ion-list>
+            </div><!--end toggle students controller-->
         </div><!--end myStudents-->
-
     </ion-content>
 </ion-view>
