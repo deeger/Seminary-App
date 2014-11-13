@@ -70,6 +70,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
                   controller: 'studentCtrl'
               }
           }/*,
+          //run http request for fetching specific student page
           resolve: {
               '$studentValue' : function($myDataService,$stateParams) {
                   return $myDataService.getStudentValue($stateParams.id)
