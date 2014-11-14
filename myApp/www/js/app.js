@@ -62,6 +62,22 @@ angular.module('starter', ['ionic', 'starter.controllers'])
           }
       })
 
+      .state('app.student', {
+          url: "/student/:studentId",
+          views: {
+              'menuContent' :{
+                  templateUrl: "templates/student.html",
+                  controller: 'studentCtrl'
+              }
+          }/*,
+          //run http request for fetching specific student page
+          resolve: {
+              '$studentValue' : function($myDataService,$stateParams) {
+                  return $myDataService.getStudentValue($stateParams.id)
+              }
+          }*/
+      })
+
      .state('app.language', {
           url: "/language",
           views: {
