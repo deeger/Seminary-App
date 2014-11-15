@@ -3,24 +3,6 @@ var app = angular.module('starter.controllers', []);
 app.controller('AppCtrl', function($scope, periodSvc ,$ionicModal, $timeout, $http) {
     window.debugScope = $scope;
 
-    /*$scope.date = new Date();
-
-     $scope.next = function (){
-     $scope.date.setDate($scope.date.getDate()+1);
-     while($scope.date.getDay() == 6 || $scope.date.getDay() == 0)
-     {
-     $scope.date.setDate($scope.date.getDate()+1);
-     }
-     }
-     $scope.previous = function (){
-     $scope.date.setDate($scope.date.getDate()-1);
-     while($scope.date.getDay() == 6 || $scope.date.getDay() == 0)
-     {
-     $scope.date.setDate($scope.date.getDate()-1);
-     }
-     }
-     */
-
     //Date Functionality
     $scope.initPeriod = function(periodId) {
         $http.get('periods/days.json')
@@ -40,8 +22,6 @@ app.controller('AppCtrl', function($scope, periodSvc ,$ionicModal, $timeout, $ht
                 alert("error");
             });
     }
-
-
 
     $scope.next = function (){
         for(var i = 0; i < $scope.dayData.length; i++){
@@ -63,11 +43,9 @@ app.controller('AppCtrl', function($scope, periodSvc ,$ionicModal, $timeout, $ht
                 }
             }
         }
-    }
+    }//end Date Functionality
 
 
-
-//end Date
 
 
     $scope.changePeriod ={};
@@ -79,8 +57,6 @@ app.controller('AppCtrl', function($scope, periodSvc ,$ionicModal, $timeout, $ht
     }
 
 
-   // for (var idx = 0; idx < data.length; idx++)
-
     //original call to ger periods
     function init() {
         periodSvc.GetPeriods (function (data) {
@@ -88,12 +64,10 @@ app.controller('AppCtrl', function($scope, periodSvc ,$ionicModal, $timeout, $ht
         })
     }
     init();
-
     $scope.changePeriodClose = function (changePeriod, period){
         changePeriod.Expanded = false;
         $scope.initPeriod(period);
     }
-
 });
 
 app.controller('periodCtrl', function($scope, $stateParams, periodSvc) {
@@ -112,7 +86,6 @@ app.controller('periodCtrl', function($scope, $stateParams, periodSvc) {
 
 
 //attendance page
-
 //Vince's Code, Hiding/Showing student info
 app.controller('toggleStudents',['$scope', function($scope){
     $scope.hide = true;
@@ -121,13 +94,11 @@ app.controller('toggleStudents',['$scope', function($scope){
     };
 }]);
 
-
 app.controller('attendanceCtrl', function($scope, $controller){
     $controller('periodCtrl', {$scope: $scope});
     var showMarkers = function(){
 
     }
-
 
     $scope.toggleMarkersExpanded = function (item) {
         if (!item.Expanded) {
@@ -137,10 +108,8 @@ app.controller('attendanceCtrl', function($scope, $controller){
                 students[i].state.Expanded = false;
             }
         }
-
         item.Expanded=!item.Expanded;
     };
-
     $scope.chosenMark="--";
     $scope.chooseMark = function(student,selMarker){//function (value, item){
         console.log("attendance marked as " + selMarker);
@@ -148,39 +117,43 @@ app.controller('attendanceCtrl', function($scope, $controller){
         student.state.Expanded=false;
     }
 });//end attendance controller
+//end attendance page
 
 //student controller
 app.controller('studentCtrl', function($scope, $stateParams, $controller){
     $controller('periodCtrl', {$scope: $scope});
     console.log("Student ID: ", $stateParams);
 
-    var db = new PouchDB('https://deeger:Misured.9945@dgm3790.iriscouch.com/seminary_db');
-
+    //old db code
+    /*var db = new PouchDB('https://deeger:Misured.9945@dgm3790.iriscouch.com/seminary_db');
     //post=create  put=update-needs ID
     db.post({
         "name": "seminary_db test"
-    }).then;
+    });
 
     db.changes().on('change', function(){
         console.log('changing DB')
-    });
-
+    });*/
 });//end student controller
+
 
 //gradebook controller
 app.controller('gradeBookCtrl', function($scope, $controller){
     $controller('periodCtrl', {$scope: $scope});
 });//end gradebook controller
 
+
 //messaging controller
 app.controller('messagingCtrl', function($scope, $controller){
     $controller('periodCtrl', {$scope: $scope});
 });//end messaging controller
 
+
 //language controller
 app.controller('languageCtrl', function($scope){
 
 });//end language controller
+
 
 //all http services defined here.
 app.service('periodSvc', function($http) {
@@ -199,7 +172,7 @@ app.service('periodSvc', function($http) {
 
     //gets period info when there is none stored
     this.GetPeriods = function(successFunc){
-        var url = 'periods/periods.json';
+        var url = 'periods/periods.json'/*'https://deeger:Misured.9945@dgm3790.iriscouch.com/seminary_db'*/;
         $http.get(url, null)
             .success(function(data) {
                 if (data.length > 0) {
@@ -247,5 +220,4 @@ app.service('periodSvc', function($http) {
                 console.log("get error");
             });
     }
-
 });

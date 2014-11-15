@@ -1,30 +1,36 @@
-
 // Colors
 // -------------------------------
 
-$light:                           #fff !default;
-$stable:                          #f8f8f8 !default;
-$positive:                        #4a87ee !default;
-$calm:                            #43cee6 !default;
-$balanced:                        #66cc33 !default;
-$energized:                       #f0b840 !default;
-$assertive:                       #ef4e3a !default;
-$royal:                           #8a6de9 !default;
-$dark:                            #444 !default;
+$light:                           #fff !default;//white
+$stable:                          #33bc95 !default;//fern with black text
+$positive:                        #42b1e4 !default;//cerulean
+$calm:                            #fff !default;
+$balanced:                        #33bc95 !default;//fern with white text
+$energized:                       #f79d1d !default;//honey
+$assertive:                       #ee5357 !default;//rose
+$royal:                           #7e6caf !default;//dusk
+$dark:                            #333 !default;//graphite
+
+$grey:                            #888 !default;
+
+$xlGrey:                          lighten($grey, 35%) !default;
+$lGrey:                           lighten($grey, 20%) !default;
+$dGrey:                           darken($grey, 20%) !default;
+$xdGrey:                          darken($grey, 30%) !default;
 
 
 // Base
 // -------------------------------
 
-$font-family-sans-serif:          "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif !default;
+$font-family-sans-serif:          "Open Sans","Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif !default;
 $font-family-light-sans-serif:    "Helvetica Neue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif !default;
 $font-family-serif:               Georgia, "Times New Roman", Times, serif !default;
 $font-family-monospace:           Monaco, Menlo, Consolas, "Courier New", monospace !default;
 
 $font-family-base:                $font-family-sans-serif !default;
-$font-size-base:                  14px !default;
-$font-size-large:                 18px !default;
-$font-size-small:                 11px !default;
+$font-size-base:                  18px !default;
+$font-size-large:                 22px !default;
+$font-size-small:                 14px !default;
 
 $line-height-base:                1.428571429 !default; // 20/14
 $line-height-computed:            floor($font-size-base * $line-height-base) !default; // ~20px
@@ -72,10 +78,10 @@ $button-clear-padding:            6px !default;
 $button-border-radius:            2px !default;
 $button-border-width:             1px !default;
 
-$button-font-size:                16px !default;
+$button-font-size:                18px !default;
 $button-height:                   42px !default;
 $button-padding:                  12px !default;
-$button-icon-size:                24px !default;
+$button-icon-size:                18px !default;
 
 $button-large-font-size:          20px !default;
 $button-large-height:             54px !default;
@@ -93,14 +99,14 @@ $button-bar-button-padding:       8px !default;
 $button-bar-button-icon-size:     20px !default;
 
 $button-light-bg:                 $light !default;
-$button-light-text:               #444 !default;
-$button-light-border:             #ddd !default;
+$button-light-text:               $positive !default;
+$button-light-border:             $positive !default;
 $button-light-active-bg:          #fafafa !default;
 $button-light-active-border:      #ccc !default;
 
 $button-stable-bg:                $stable !default;
-$button-stable-text:              #444 !default;
-$button-stable-border:            #b2b2b2 !default;
+$button-stable-text:              #fff !default;
+$button-stable-border:            #fff !default;
 $button-stable-active-bg:         #e5e5e5 !default;
 $button-stable-active-border:     #a2a2a2 !default;
 
@@ -417,8 +423,8 @@ $input-height-base:               ($line-height-computed + ($padding-base-vertic
 $input-height-large:              (floor($font-size-large * $line-height-large) + ($padding-large-vertical * 2) + 2) !default;
 $input-height-small:              (floor($font-size-small * $line-height-small) + ($padding-small-vertical * 2) + 2) !default;
 
-$input-bg:                        $light !default;
-$input-bg-disabled:               $stable !default;
+$input-bg:                        $positive !default;
+$input-bg-disabled:               lighten($positive, 30%) !default;
 
 $input-color:                     #111 !default;
 $input-border:                    $item-default-border !default;
