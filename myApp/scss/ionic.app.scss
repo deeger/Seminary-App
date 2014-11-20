@@ -93,6 +93,19 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
   }
 }
 
+.all, .all:hover{
+  color: $stable;
+  background-color: $light;
+  position: absolute;
+  top: 1px;
+  right: 5px;
+}
+.markAllContainer{
+  height: 50px;
+  position: relative;
+}
+
+
 /*--------Style Student List--------*/
 #studentList .item {
   color: $dark;

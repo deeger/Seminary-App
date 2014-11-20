@@ -37,7 +37,11 @@
 
         <div class="myStudents" ng-show="Period">
             <div ng-controller="toggleStudents">
-                <button ng-click="toggleCustom()">Expanded View</button>
+               <!--<button ng-click="toggleCustom()">Expanded View</button>-->
+                <div class="markAllContainer">
+                    <button ng-click="" class="button all icon ion-chevron-down icon-right">All</button>
+                </div>
+
                 <ion-list id="studentList" ng-show="Period">
                     <ion-item ng-repeat="student in Period.students">
                         <a href="#/app/student/{{student.studentId}}">
