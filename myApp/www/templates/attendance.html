@@ -39,7 +39,7 @@
             <div ng-controller="toggleStudents">
                <!--<button ng-click="toggleCustom()">Expanded View</button>-->
                 <div class="markAllContainer">
-                    <button ng-click="toggleExpanded(markAll)" class="button all icon ion-chevron-down icon-right">All</button>
+                    <button ng-click="toggleExpanded(markAll)" ng-class="{'ion-chevron-down' :!markAll.Expanded, 'ion-chevron-up': markAll.Expanded}" class="button all icon icon-right">All</button>
                 </div>
 
 
