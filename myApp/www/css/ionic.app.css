@@ -7878,6 +7878,13 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
   height: 50px;
   position: relative; }
 
+.item {
+  border-color: #bbbbbb;
+  color: #000; }
+
+#markAll {
+  text-align: center; }
+
 /*--------Style Student List--------*/
 #studentList .item {
   color: #333;

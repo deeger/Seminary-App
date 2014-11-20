@@ -49,6 +49,7 @@ app.controller('AppCtrl', function($scope, periodSvc ,$ionicModal, $timeout, $ht
 
 
     $scope.changePeriod ={};
+    $scope.markAll = {};
     $scope.markers="markers";
 
     $scope.toggleExpanded = function (item){

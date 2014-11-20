@@ -104,7 +104,13 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
   height: 50px;
   position: relative;
 }
-
+.item{
+  border-color: $lGrey;
+  color: #000;
+}
+#markAll{
+  text-align: center;
+}
 
 /*--------Style Student List--------*/
 #studentList .item {
