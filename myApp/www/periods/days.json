@@ -60,9 +60,9 @@
         "dayType": "A"
     },
     {
-    "date": "2014-12-01",
-    "dayType": "B"
-},
+        "date": "2014-12-01",
+        "dayType": "B"
+    },
     {
         "date": "2014-12-02",
         "dayType": "A"

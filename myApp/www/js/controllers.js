@@ -1,6 +1,11 @@
 var app = angular.module('starter.controllers', []);
 
 app.controller('AppCtrl', function($scope, periodSvc ,$ionicModal, $timeout, $http) {
+    $scope.hide = true;
+    $scope.toggleCustom = function() {
+        $scope.hide = $scope.hide === false ? true: false;
+    };
+
     window.debugScope = $scope;
 
     //Date Functionality
@@ -13,7 +18,7 @@ app.controller('AppCtrl', function($scope, periodSvc ,$ionicModal, $timeout, $ht
                 for(var i = 0; i < data.length; i++){
                     var parts = data[i].date.split("-");
                     var newDate = new Date([parts[0], parts[1],parts[2]]);
-                    if(newDate.getDate() >= today.getDate() && data[i].dayType == periodId.classSchedule){
+                    if(newDate.getDay() >= today.getDay() && newDate.getMonth() >= today.getMonth() && newDate.getFullYear() >= today.getFullYear() && data[i].dayType == periodId.classSchedule){
                         $scope.date = data[i].date;
                         break;
                     }
@@ -89,11 +94,13 @@ app.controller('periodCtrl', function($scope, $stateParams, periodSvc) {
 //attendance page
 //Vince's Code, Hiding/Showing student info
 app.controller('toggleStudents',['$scope', function($scope){
-    $scope.hide = true;
+    /*$scope.hide = true;
     $scope.toggleCustom = function() {
         $scope.hide = $scope.hide === false ? true: false;
-    };
+    };*/
 }]);
+
+
 
 app.controller('attendanceCtrl', function($scope, $controller){
     $controller('periodCtrl', {$scope: $scope});
