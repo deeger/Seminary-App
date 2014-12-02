@@ -4,6 +4,24 @@
             <button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
         </span>
     </ion-nav-buttons>
+
+
+    <ion-nav-buttons side="right">
+        <span>
+            <div ng-controller="toggleStudentsCtrl">
+            <button class='button center button-icon icon icon-right'
+                    ng-show='Period'
+                    ng-click="toggleCustom()">
+                Expand Students
+            </button>
+            </div>
+        </span>
+    </ion-nav-buttons>
+
+
+
+
+
     <ion-nav-buttons>
         <button id="changePeriodBtn"
                 ng-click='toggleExpanded(changePeriod)'
@@ -36,9 +54,6 @@
         </ion-list>
 
         <div class="myStudents" ng-show="Period">
-            <div ng-controller="toggleStudents">
-                <button ng-click="toggleCustom()">Expanded View</button>
-                <ion-list id="studentList" ng-show="Period">
                     <ion-item ng-repeat="student in Period.students">
                         <a href="#/app/student/{{student.studentId}}">
                         <div class="fName">{{student.firstName}}</div>

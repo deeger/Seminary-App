@@ -1,6 +1,16 @@
 var app = angular.module('starter.controllers', []);
 
 app.controller('AppCtrl', function($scope, periodSvc ,$ionicModal, $timeout, $http) {
+
+
+        $scope.hide = true;
+        $scope.toggleCustom = function() {
+            $scope.hide = $scope.hide === false ? true: false;
+
+
+
+    };
+
     window.debugScope = $scope;
 
     //Date Functionality
@@ -87,12 +97,8 @@ app.controller('periodCtrl', function($scope, $stateParams, periodSvc) {
 
 //attendance page
 //Vince's Code, Hiding/Showing student info
-app.controller('toggleStudents',['$scope', function($scope){
-    $scope.hide = true;
-    $scope.toggleCustom = function() {
-        $scope.hide = $scope.hide === false ? true: false;
-    };
-}]);
+
+
 
 app.controller('attendanceCtrl', function($scope, $controller){
     $controller('periodCtrl', {$scope: $scope});
@@ -220,4 +226,17 @@ app.service('periodSvc', function($http) {
                 console.log("get error");
             });
     }
+});
+
+
+
+
+app.controller('onoffCtrl', function($scope) {
+
+
+    $scope.change = false;
+    $scope.onOff = function() {
+        $scope.change = !$scope.change;
+    }
+
 });
