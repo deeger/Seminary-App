@@ -26,7 +26,7 @@ app.controller('AppCtrl', function($scope, periodSvc ,$ionicModal, $timeout, $ht
             }) .error(function () {
                 alert("error");
             });
-    }
+    };
 
     $scope.next = function (){
         for(var i = 0; i < $scope.dayData.length; i++){
@@ -37,7 +37,7 @@ app.controller('AppCtrl', function($scope, periodSvc ,$ionicModal, $timeout, $ht
                 }
             }
         }
-    }
+    };
 
     $scope.previous = function (){
         for(var i = $scope.dayData.length - 1; i >= 0; i--){
@@ -48,7 +48,7 @@ app.controller('AppCtrl', function($scope, periodSvc ,$ionicModal, $timeout, $ht
                 }
             }
         }
-    }//end Date Functionality
+    };//end Date Functionality
 
 
 
@@ -60,8 +60,22 @@ app.controller('AppCtrl', function($scope, periodSvc ,$ionicModal, $timeout, $ht
     $scope.toggleExpanded = function (item){
         item.Expanded=!item.Expanded;
         console.log(item + " expanded");
-    }
+    };
 
+
+
+    $scope.hideStudents = function (){
+        var students = document.getElementById("studentList");
+        var style = window.getComputedStyle(students);
+        var display = style.getPropertyValue('display');
+        if(display == "none"){
+            students.style.display = 'inline';
+        }
+        else
+        {
+            students.style.display = 'none';
+        }
+    };
 
     //original call to ger periods
     function init() {
@@ -123,7 +137,34 @@ app.controller('attendanceCtrl', function($scope, $controller){
         console.log("attendance marked as " + selMarker);
         student.state.Chosen = selMarker;
         student.state.Expanded=false;
-    }
+    };
+
+    //Mark All Attendance
+    $scope.markPresent = function () {
+        for(var i =0; i < $scope.Period.students.length; i++){
+            if($scope.Period.students[i].state.Chosen == $scope.Period.students[i].state.Options[0]){
+                $scope.Period.students[i].state.Chosen = $scope.Period.students[i].state.Options[1];
+            }
+        }
+
+        //Hide all menu
+        $scope.toggleExpanded($scope.markAll);
+        $scope.hideStudents();
+    };
+
+    $scope.markAbsent = function () {
+        for(var i =0; i < $scope.Period.students.length; i++){
+            if($scope.Period.students[i].state.Chosen == $scope.Period.students[i].state.Options[0]){
+                $scope.Period.students[i].state.Chosen = $scope.Period.students[i].state.Options[2];
+            }
+        }
+    //end mark all attendance
+
+        //Hide all menu
+        $scope.toggleExpanded($scope.markAll);
+        $scope.hideStudents();
+    };
+
 });//end attendance controller
 //end attendance page
 
