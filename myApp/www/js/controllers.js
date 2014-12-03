@@ -1,6 +1,11 @@
 var app = angular.module('starter.controllers', []);
 
 app.controller('AppCtrl', function($scope, periodSvc ,$ionicModal, $timeout, $http) {
+<<<<<<< HEAD
+    $scope.hide = true;
+    $scope.toggleCustom = function() {
+        $scope.hide = $scope.hide === false ? true: false;
+=======
 
 
         $scope.hide = true;
@@ -9,6 +14,7 @@ app.controller('AppCtrl', function($scope, periodSvc ,$ionicModal, $timeout, $ht
 
 
 
+>>>>>>> master
     };
 
     window.debugScope = $scope;
@@ -23,7 +29,7 @@ app.controller('AppCtrl', function($scope, periodSvc ,$ionicModal, $timeout, $ht
                 for(var i = 0; i < data.length; i++){
                     var parts = data[i].date.split("-");
                     var newDate = new Date([parts[0], parts[1],parts[2]]);
-                    if(newDate.getDate() >= today.getDate() && data[i].dayType == periodId.classSchedule){
+                    if(newDate.getDay() >= today.getDay() && newDate.getMonth() >= today.getMonth() && newDate.getFullYear() >= today.getFullYear() && data[i].dayType == periodId.classSchedule){
                         $scope.date = data[i].date;
                         break;
                     }
@@ -31,7 +37,7 @@ app.controller('AppCtrl', function($scope, periodSvc ,$ionicModal, $timeout, $ht
             }) .error(function () {
                 alert("error");
             });
-    }
+    };
 
     $scope.next = function (){
         for(var i = 0; i < $scope.dayData.length; i++){
@@ -42,7 +48,7 @@ app.controller('AppCtrl', function($scope, periodSvc ,$ionicModal, $timeout, $ht
                 }
             }
         }
-    }
+    };
 
     $scope.previous = function (){
         for(var i = $scope.dayData.length - 1; i >= 0; i--){
@@ -53,19 +59,34 @@ app.controller('AppCtrl', function($scope, periodSvc ,$ionicModal, $timeout, $ht
                 }
             }
         }
-    }//end Date Functionality
+    };//end Date Functionality
 
 
 
 
     $scope.changePeriod ={};
+    $scope.markAll = {};
     $scope.markers="markers";
 
     $scope.toggleExpanded = function (item){
         item.Expanded=!item.Expanded;
         console.log(item + " expanded");
-    }
+    };
 
+
+
+    $scope.hideStudents = function (){
+        var students = document.getElementById("studentList");
+        var style = window.getComputedStyle(students);
+        var display = style.getPropertyValue('display');
+        if(display == "none"){
+            students.style.display = 'inline';
+        }
+        else
+        {
+            students.style.display = 'none';
+        }
+    };
 
     //original call to ger periods
     function init() {
@@ -99,6 +120,17 @@ app.controller('periodCtrl', function($scope, $stateParams, periodSvc) {
 
 //attendance page
 //Vince's Code, Hiding/Showing student info
+<<<<<<< HEAD
+app.controller('toggleStudents',['$scope', function($scope){
+    /*$scope.hide = true;
+    $scope.toggleCustom = function() {
+        $scope.hide = $scope.hide === false ? true: false;
+    };*/
+}]);
+=======
+
+
+>>>>>>> master
 
 
 
@@ -123,7 +155,34 @@ app.controller('attendanceCtrl', function($scope, $controller){
         console.log("attendance marked as " + selMarker);
         student.state.Chosen = selMarker;
         student.state.Expanded=false;
-    }
+    };
+
+    //Mark All Attendance
+    $scope.markPresent = function () {
+        for(var i =0; i < $scope.Period.students.length; i++){
+            if($scope.Period.students[i].state.Chosen == $scope.Period.students[i].state.Options[0]){
+                $scope.Period.students[i].state.Chosen = $scope.Period.students[i].state.Options[1];
+            }
+        }
+
+        //Hide all menu
+        $scope.toggleExpanded($scope.markAll);
+        $scope.hideStudents();
+    };
+
+    $scope.markAbsent = function () {
+        for(var i =0; i < $scope.Period.students.length; i++){
+            if($scope.Period.students[i].state.Chosen == $scope.Period.students[i].state.Options[0]){
+                $scope.Period.students[i].state.Chosen = $scope.Period.students[i].state.Options[2];
+            }
+        }
+    //end mark all attendance
+
+        //Hide all menu
+        $scope.toggleExpanded($scope.markAll);
+        $scope.hideStudents();
+    };
+
 });//end attendance controller
 //end attendance page
 
