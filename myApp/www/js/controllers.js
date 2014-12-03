@@ -1,20 +1,9 @@
 var app = angular.module('starter.controllers', []);
 
 app.controller('AppCtrl', function($scope, periodSvc ,$ionicModal, $timeout, $http) {
-<<<<<<< HEAD
     $scope.hide = true;
     $scope.toggleCustom = function() {
         $scope.hide = $scope.hide === false ? true: false;
-=======
-
-
-        $scope.hide = true;
-        $scope.toggleCustom = function() {
-            $scope.hide = $scope.hide === false ? true: false;
-
-
-
->>>>>>> master
     };
 
     window.debugScope = $scope;
@@ -119,18 +108,14 @@ app.controller('periodCtrl', function($scope, $stateParams, periodSvc) {
 
 
 //attendance page
+
 //Vince's Code, Hiding/Showing student info
-<<<<<<< HEAD
 app.controller('toggleStudents',['$scope', function($scope){
     /*$scope.hide = true;
     $scope.toggleCustom = function() {
         $scope.hide = $scope.hide === false ? true: false;
     };*/
 }]);
-=======
-
-
->>>>>>> master
 
 
 
