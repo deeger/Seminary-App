@@ -71,12 +71,14 @@ app.controller('AppCtrl', function($scope, periodSvc ,$ionicModal, $timeout, $ht
     function init() {
         periodSvc.GetPeriods (function (data) {
             $scope.periods = data;
+            console.log(data);
         })
     }
     init();
     $scope.changePeriodClose = function (changePeriod, period){
         changePeriod.Expanded = false;
         $scope.initPeriod(period);
+
     }
 });
 
@@ -178,12 +180,14 @@ app.service('periodSvc', function($http) {
 
     //gets period info when there is none stored
     this.GetPeriods = function(successFunc){
-        var url = 'periods/periods.json'/*'https://deeger:Misured.9945@dgm3790.iriscouch.com/seminary_db'*/;
+        var url = //'periods/periods.json';
+        'https://dgm3790.iriscouch.com/seminary_db/periods';
+
         $http.get(url, null)
             .success(function(data) {
-                if (data.length > 0) {
-                    for (var idx = 0; idx < data.length; idx++) {
-                        var period = data[idx];
+                if (data.periods.length > 0) {
+                    for (var idx = 0; idx < data.periods.length; idx++) {
+                        var period = data.periods[idx];
                         for (var i = 0; i < period.students.length; i++) {
                             var student = period.students[i];
                             var useOptions = [ {
@@ -218,9 +222,8 @@ app.service('periodSvc', function($http) {
                         }
                     }
                 }
-
-                cache.Periods = data;
-                successFunc(data);
+                cache.Periods = data.periods;
+                successFunc(data.periods);
             })
             .error(function(data){
                 console.log("get error");
