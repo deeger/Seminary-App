@@ -34,9 +34,20 @@
        <!-- Expand -->
 
           <ion-list ng-controller="onoffCtrl">
-          <ion-item nav-clear menu-close ng-click="toggleCustom()">
-              <span class="icon ion-person icon-left" ng-click="onOff()"> Student Picture {{change ? 'On' : 'Off'}}</span>
-          </ion-item>
+              <ion-item   ng-click="toggleCustom()">
+              <span class="icon ion-person icon-left" ng-click="onOff()"> Student Picture {{change ? 'On' : 'Off'}}
+
+              <label class="toggle toggle-balanced">
+                  <input type="checkbox">
+                  <div class="track">
+                      <div class="handle"></div>
+
+                  </div>
+              </label>
+</span>
+
+
+              </ion-item>
           </ion-list>
             <!--<div ng-controller="toggleStudents">
                 <div class="fName" ng-click="toggleCustom()"></div>
