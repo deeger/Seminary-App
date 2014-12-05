@@ -11,6 +11,7 @@
     <header class="bar bar-header bar-dark">
       <h1 class="title">Paul Jones</h1>
     </header>
+
     <ion-content class="has-header side-menu">
       <ion-list>
         <ion-item nav-clear menu-close href="#/app/attendance">
@@ -33,10 +34,22 @@
 
        <!-- Expand -->
           <ion-list ng-controller="onoffCtrl">
-          <ion-item nav-clear menu-close ng-click="toggleCustom()">
-              <span class="icon ion-person icon-left" ng-click="onOff()"> Student Picture {{change ? 'On' : 'Off'}}</span>
+          <ion-item   ng-click="toggleCustom()">
+              <span class="icon ion-person icon-left" ng-click="onOff()"> Student Picture {{change ? 'On' : 'Off'}}
+
+              <label class="toggle toggle-balanced">
+                  <input type="checkbox">
+                  <div class="track">
+                      <div class="handle"></div>
+
+                  </div>
+              </label>
+</span>
+
+
           </ion-item>
           </ion-list>
+
 
 
 
