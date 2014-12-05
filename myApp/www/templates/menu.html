@@ -2,7 +2,7 @@
 
   <ion-pane ion-side-menu-content>
     <ion-nav-bar class="bar-balanced na-title-slide-ios7">
-      <ion-nav-back-button class="button-clear"><i class="icon ion-ios7-arrow-back"></i> Back</ion-nav-back-button>
+      <!--<ion-nav-back-button class="button-clear"><i class="icon ion-ios7-arrow-back"></i> Back</ion-nav-back-button><-- this should be in the student profile page only-->
     </ion-nav-bar>
     <ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
   </ion-pane>
@@ -11,7 +11,6 @@
     <header class="bar bar-header bar-dark">
       <h1 class="title">Paul Jones</h1>
     </header>
-
     <ion-content class="has-header side-menu">
       <ion-list>
         <ion-item nav-clear menu-close href="#/app/attendance">
@@ -33,26 +32,17 @@
 
 
        <!-- Expand -->
+
           <ion-list ng-controller="onoffCtrl">
-          <ion-item   ng-click="toggleCustom()">
-              <span class="icon ion-person icon-left" ng-click="onOff()"> Student Picture {{change ? 'On' : 'Off'}}
-
-              <label class="toggle toggle-balanced">
-                  <input type="checkbox">
-                  <div class="track">
-                      <div class="handle"></div>
-
-                  </div>
-              </label>
-</span>
-
-
+          <ion-item nav-clear menu-close ng-click="toggleCustom()">
+              <span class="icon ion-person icon-left" ng-click="onOff()"> Student Picture {{change ? 'On' : 'Off'}}</span>
           </ion-item>
           </ion-list>
-
-
-
-
+            <!--<div ng-controller="toggleStudents">
+                <div class="fName" ng-click="toggleCustom()"></div>
+                <span ng-hide="hide"></span>
+            </div>-->
+        </ion-item><!--end expanded view-->
       </ion-list>
     </ion-content>
   </ion-side-menu>

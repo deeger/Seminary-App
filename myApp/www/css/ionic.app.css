@@ -7858,7 +7858,7 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
 
 #changePeriod .list {
   z-index: 11;
-  top: 44px;
+  top: -4px;
   overflow: hidden; }
 #changePeriod .item {
   background: #33bc95;
@@ -7866,6 +7866,24 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
   border-color: #fff; }
 #changePeriod a {
   background: none; }
+
+.all, .all:hover {
+  color: #33bc95;
+  background-color: #fff;
+  position: absolute;
+  top: 1px;
+  right: 5px; }
+
+.markAllContainer {
+  height: 50px;
+  position: relative; }
+
+.item {
+  border-color: #bbbbbb;
+  color: #000; }
+
+#markAll {
+  text-align: center; }
 
 /*--------Style Student List--------*/
 #studentList .item {
