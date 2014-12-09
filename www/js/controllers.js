@@ -18,7 +18,7 @@ app.controller('AppCtrl', function($scope, periodSvc ,$ionicModal, $timeout, $ht
                 for(var i = 0; i < data.length; i++){
                     var parts = data[i].date.split("-");
                     var newDate = new Date([parts[0], parts[1],parts[2]]);
-                    if(newDate.getDay() >= today.getDay() && newDate.getMonth() >= today.getMonth() && newDate.getFullYear() >= today.getFullYear() && data[i].dayType == periodId.classSchedule){
+                    if(newDate.getDate() >= today.getDate() && newDate.getMonth() >= today.getMonth() && newDate.getFullYear() >= today.getFullYear() && data[i].dayType == periodId.classSchedule){
                         $scope.date = data[i].date;
                         break;
                     }
