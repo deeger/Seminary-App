@@ -16,14 +16,14 @@
     "address1": "1234 W 500 N",
     "address2": " Orem UT 84057"
   },
-  "Secondary": {
-    "firstName": "Richard",
+  "secondary": {
+    "firstName": "Susan",
     "lastName": "Price",
     "cell": "801.456.6554"
   },
   "bishop": {
-    "firstName": "Richard",
-    "lastName": "Price",
+    "firstName": "Dale",
+    "lastName": "Cunningham",
     "home": "435.543.1234",
     "email": "cunningbishop@ldschurch.org"
   }
