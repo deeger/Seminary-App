@@ -113,7 +113,9 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 }
 
 /*--------Style Student List--------*/
-#studentList .item {
+#studentList
+
+.item {
   color: $dark;
   border-color: $lGrey;
   padding:10px;
