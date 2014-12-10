@@ -7888,7 +7888,11 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
 /*--------Style Student List--------*/
 #studentList .item {
   color: #333;
-  border-color: #bbbbbb; }
+  border-color: #bbbbbb;
+  padding: 10px; }
+  #studentList .item a {
+    color: #333;
+    text-decoration: none; }
 
 .fName {
   display: inline; }
@@ -7900,7 +7904,8 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
 .photo img {
   float: left;
   margin-right: 0.5em;
-  height: 80px; }
+  height: 80px;
+  margin-top: 4px; }
 
 .percent {
   color: #888;
@@ -7908,11 +7913,57 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
 
 .year {
   color: #888;
-  font-size: 0.85em; }
+  font-size: 0.85em;
+  display: inline-block; }
 
 .attMarker {
+  cursor: pointer;
+  color: #fff;
+  font-size: 24px;
   float: right; }
   .attMarker .activeMark {
-    border: solid 1px #33bc95;
     border-radius: 5px;
-    padding: 0 0.3em; }
+    height: 40px;
+    width: 44px;
+    text-align: center;
+    box-shadow: 0 0 2px #bbbbbb;
+    padding-top: 6px; }
+    .attMarker .activeMark.none {
+      color: #333;
+      border: solid 2px #33bc95; }
+
+.markers {
+  box-shadow: 0 0 4px #888;
+  padding: 2px 0;
+  width: 100%;
+  max-width: 450px;
+  float: right;
+  cursor: pointer;
+  margin-top: 5px; }
+  .markers span {
+    font-size: 24px;
+    border-radius: 5px;
+    height: 40px;
+    width: 15.66%;
+    text-align: center;
+    display: inline-block;
+    float: right;
+    padding-top: 0.25em;
+    color: #fff;
+    margin: 0.3% 0.5%; }
+    .markers span.none {
+      color: #333;
+      border: 2px solid #33bc95; }
+
+.schoolExcused, .parentExcused, .present {
+  background: #33bc95; }
+
+.unexcused {
+  background: #ee5357; }
+
+.tardy {
+  background: #f79d1d; }
+
+.none {
+  background: white;
+  color: #333; }

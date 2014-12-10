@@ -118,6 +118,12 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 .item {
   color: $dark;
   border-color: $lGrey;
+  padding:10px;
+
+  a{
+    color:$dark;
+    text-decoration: none;
+  }
 }
 .fName {
   display: inline;
@@ -130,6 +136,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
   float: left;
   margin-right: .5em;
   height: 80px;
+  margin-top:4px;
 }
 .percent {
   color: $grey;
@@ -138,13 +145,67 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 .year {
   color: $grey;
   font-size: .85em;
+  display:inline-block;
 }
 .attMarker {
+  cursor:pointer;
+  color:$light;
+  font-size:24px;
   .activeMark {
-    border: solid 1px $balanced;
     border-radius: 5px;
-    padding: 0 .3em;
+    height:40px;
+    width:44px;
+    text-align:center;
+    box-shadow: 0 0 2px $lGrey;
+    padding-top:6px;
+    &.none{
+      color:$dark;
+      border: solid 2px $balanced;
+    }
   }
   float: right;
 }
+
+.markers {
+  box-shadow:0 0 4px $grey;
+  padding:2px 0;
+  width: 100%;
+  max-width:450px;
+  float:right;
+  cursor:pointer;
+  margin-top:5px;
+
+  span{
+    font-size:24px;
+    border-radius: 5px;
+    height:40px;
+    width:15.66%;
+    text-align:center;
+    display:inline-block;
+    float:right;
+    padding-top:.25em;
+    color:$light;
+    margin:.3% .5%;
+
+    &.none{
+      color:$dark;
+      border:2px solid $balanced;
+    }
+  }//end span
+}//end .markers
+
+.schoolExcused, .parentExcused, .present {
+  background: $balanced;
+}
+.unexcused{
+  background:$assertive;
+}
+.tardy{
+  background:$energized;
+}
+.none{
+  background:white;
+  color:$dark;
+}
+
 
