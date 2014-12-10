@@ -3,8 +3,56 @@
         <button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
     </ion-nav-buttons>
     <ion-content class="has-header">
-        <h1>student page</h1>
-        <p>{{student.fName}} {{student.lName}}</p>
-        <p>ID: {{student.studentId}}{{$stateParams.studentId}}{{studentId}}</p>
+        <h2>{{student.fName}} {{student.lName}}</h2>
+        <div class="student">
+            <div class="gender">{{student.gender}}</div>
+            <div class="schoolYear">{{student.schoolYear}}</div>
+            <div class="age">{{student.age}}</div>
+            <div class="birthday">{{student.birthday}}</div>
+            <div class="picture">{{student.picture}}</div>
+        </div><!--end.student-->
+        <div class="attendance">
+            <h3>Attendance</h3>
+            <div class="attPercent">{{student.attPercent}}</div>
+        </div><!--end.attendance-->
+        <div class="primary">
+            <h3>Primary</h3>
+            <div class="firstName">{{student.primary.firstName}}</div>
+            <div class="lastName">{{student.primary.lastName}}</div>
+            <div class="home"><a href="tel:{{student.primary.home}}">{{student.primary.home}}</a></div>
+            <div class="cell">{{student.primary.cell}}</div>
+            <div class="work">{{student.primary.work}}</div>
+            <div class="email">{{student.primary.email}}</div>
+            <div class="address">
+                <div class="address1">{{student.primary.address1}}</div>
+                <div class="address2">{{student.primary.address2}}</div>
+            </div>
+        </div><!--end.primary-->
+        <div class="secondary">
+            <h3>Secondary</h3>
+            <div class="firstName">{{student.secondary.firstName}}</div>
+            <div class="lastName">{{student.secondary.lastName}}</div>
+            <div class="home">{{student.secondary.home}}</div>
+            <div class="cell">{{student.secondary.cell}}</div>
+            <div class="work">{{student.secondary.work}}</div>
+            <div class="email">{{student.secondary.email}}</div>
+            <div class="address">
+                <div class="address1">{{student.secondary.address1}}</div>
+                <div class="address2">{{student.secondary.address2}}</div>
+            </div>
+        </div><!--end.secondary-->
+        <div class="bishop">
+            <h3>Bishop</h3>
+            <div class="firstName">{{student.bishop.firstName}}</div>
+            <div class="lastName">{{student.bishop.lastName}}</div>
+            <div class="home">{{student.bishop.home}}</div>
+            <div class="cell">{{student.bishop.cell}}</div>
+            <div class="work">{{student.bishop.work}}</div>
+            <div class="email">{{student.bishop.email}}</div>
+            <div class="address">
+                <div class="address1">{{student.bishop.address1}}</div>
+                <div class="address2">{{student.bishop.address2}}</div>
+            </div>
+        </div><!--end.secondary-->
     </ion-content>
 </ion-view>
