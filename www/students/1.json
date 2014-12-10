@@ -1,6 +1,7 @@
 {
   "firstName": "Vincent",
   "lastName": "Price",
+  "gender":"Male",
   "picture": "img/studentPictures/noPhoto.jpg",
   "schoolYear": "Senior",
   "age": "18",

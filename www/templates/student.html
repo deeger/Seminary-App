@@ -1,28 +1,35 @@
 <ion-view>
     <ion-nav-buttons side="left">
         <button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
-    </ion-nav-buttons>
-    <ion-content class="has-header">
-        <h2>{{student.fName}} {{student.lName}}</h2>
+        <ion-nav-back-button class="button"> <!-- not showing...  --->
+            <i class="icon ion-ios7-arrow-back"></i>Back
+        </ion-nav-back-button>
+        </ion-nav-buttons>
+    <ion-content class="has-header studentContent">
+        <h2 class="studentName">
+            <div class="firstName">{{student.firstName}}</div>
+            <div class="lastName">{{student.lastName}}</div>
+        </h2>
         <div class="student">
+            <div class="picture"><img src="{{student.picture}}" /></div>
             <div class="gender">{{student.gender}}</div>
             <div class="schoolYear">{{student.schoolYear}}</div>
             <div class="age">{{student.age}}</div>
             <div class="birthday">{{student.birthday}}</div>
-            <div class="picture">{{student.picture}}</div>
         </div><!--end.student-->
         <div class="attendance">
-            <h3>Attendance</h3>
-            <div class="attPercent">{{student.attPercent}}</div>
+            <h4>Attendance</h4>
+            <div class="attPercent">{{student.attPercent}}%</div>
+            <button class="button button-balanced attendanceBtn">View</button>
         </div><!--end.attendance-->
         <div class="primary">
             <h3>Primary</h3>
             <div class="firstName">{{student.primary.firstName}}</div>
             <div class="lastName">{{student.primary.lastName}}</div>
-            <div class="home"><a href="tel:{{student.primary.home}}">{{student.primary.home}}</a></div>
-            <div class="cell">{{student.primary.cell}}</div>
-            <div class="work">{{student.primary.work}}</div>
-            <div class="email">{{student.primary.email}}</div>
+            <div class="home">H: <a href="tel:{{student.primary.home}}">{{student.primary.home}}</a></div>
+            <div class="cell">C: <a href="tel:{{student.primary.cell}}">{{student.primary.cell}}</a></div>
+            <div class="work">W: <a href="tel:{{student.primary.work}}">{{student.primary.work}}</a></div>
+            <div class="email"><a href="mailto:{{student.primary.email}}">{{student.primary.email}}</a></div>
             <div class="address">
                 <div class="address1">{{student.primary.address1}}</div>
                 <div class="address2">{{student.primary.address2}}</div>
@@ -32,10 +39,10 @@
             <h3>Secondary</h3>
             <div class="firstName">{{student.secondary.firstName}}</div>
             <div class="lastName">{{student.secondary.lastName}}</div>
-            <div class="home">{{student.secondary.home}}</div>
-            <div class="cell">{{student.secondary.cell}}</div>
-            <div class="work">{{student.secondary.work}}</div>
-            <div class="email">{{student.secondary.email}}</div>
+            <div class="home">H: <a href="tel:{{student.secondary.home}}">{{student.secondary.home}}</a></div>
+            <div class="cell">C: <a href="tel:{{student.secondary.cell}}">{{student.secondary.cell}}</a></div>
+            <div class="work">W: <a href="tel:{{student.secondary.work}}">{{student.secondary.work}}</a></div>
+            <div class="email"><a href="mailto:{{student.secondary.email}}">{{student.secondary.email}}</a></div>
             <div class="address">
                 <div class="address1">{{student.secondary.address1}}</div>
                 <div class="address2">{{student.secondary.address2}}</div>
@@ -45,10 +52,10 @@
             <h3>Bishop</h3>
             <div class="firstName">{{student.bishop.firstName}}</div>
             <div class="lastName">{{student.bishop.lastName}}</div>
-            <div class="home">{{student.bishop.home}}</div>
-            <div class="cell">{{student.bishop.cell}}</div>
-            <div class="work">{{student.bishop.work}}</div>
-            <div class="email">{{student.bishop.email}}</div>
+            <div class="home">H: <a href="tel:{{student.bishop.home}}">{{student.bishop.home}}</a></div>
+            <div class="cell">C: <a href="tel:{{student.bishop.cell}}">{{student.bishop.cell}}</a></div>
+            <div class="work">W: <a href="tel:{{student.bishop.work}}">{{student.bishop.work}}</a></div>
+            <div class="email"><a href="mailto:{{student.bishop.email}}">{{student.bishop.email}}</a></div>
             <div class="address">
                 <div class="address1">{{student.bishop.address1}}</div>
                 <div class="address2">{{student.bishop.address2}}</div>
