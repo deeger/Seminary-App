@@ -21,6 +21,18 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
+@mixin clear() {
+  &:before, &:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    overflow: hidden;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
 .bar.bar-calm{
   color:$stable;
   .title{
@@ -80,7 +92,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 #changePeriod {
   .list{
     z-index:11;
-    top:-4px;
+    top:44px;
     overflow: hidden;
   }
   .item{
@@ -208,4 +220,61 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
   color:$dark;
 }
 
-
+//student page
+.studentContent{
+  line-height: 1.6em;
+  padding:16px;
+  h3,h4{
+    border-bottom:solid 1px $lGrey;
+    margin-bottom:6px;
+  }
+  h3{
+    font-size:20px;
+    font-weight:bold;
+  }
+  h4{
+    font-size:18px;
+    color:$grey;
+  }
+  a{
+    text-decoration: none;
+    color:$positive;
+  }
+}
+.student{
+  @include clear();
+}
+.studentName{
+  font-size: 22px;
+  text-align: center;
+  .lastName{
+    font-weight: bold;
+  }
+}
+.firstName, .lastName{
+  display:inline-block;
+}
+.picture{
+  float:left;
+}
+.attendance,.primary,.secondary,.bishop{
+  margin-bottom: 2em;
+  >div{
+    margin-left:10px;
+    &.lastName{
+      margin-left:0;
+    }//end .lastName
+  }//end div
+}
+.work,.cell,.home{
+  color:$grey;
+}
+.attPercent{
+  display:inline-block;
+}
+.button.button-balanced.attendanceBtn{
+  float:right;
+  border:none;
+  min-height:24px;
+  line-height: 1.6;
+}

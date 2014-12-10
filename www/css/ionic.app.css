@@ -7858,7 +7858,7 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
 
 #changePeriod .list {
   z-index: 11;
-  top: -4px;
+  top: 44px;
   overflow: hidden; }
 #changePeriod .item {
   background: #33bc95;
@@ -7967,3 +7967,58 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
 .none {
   background: white;
   color: #333; }
+
+.studentContent {
+  line-height: 1.6em;
+  padding: 16px; }
+  .studentContent h3, .studentContent h4 {
+    border-bottom: solid 1px #bbbbbb;
+    margin-bottom: 6px; }
+  .studentContent h3 {
+    font-size: 20px;
+    font-weight: bold; }
+  .studentContent h4 {
+    font-size: 18px;
+    color: #888; }
+  .studentContent a {
+    text-decoration: none;
+    color: #42b1e4; }
+
+.student:before, .student:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  overflow: hidden; }
+.student:after {
+  clear: both; }
+
+.studentName {
+  font-size: 22px;
+  text-align: center; }
+  .studentName .lastName {
+    font-weight: bold; }
+
+.firstName, .lastName {
+  display: inline-block; }
+
+.picture {
+  float: left; }
+
+.attendance, .primary, .secondary, .bishop {
+  margin-bottom: 2em; }
+  .attendance > div, .primary > div, .secondary > div, .bishop > div {
+    margin-left: 10px; }
+    .attendance > div.lastName, .primary > div.lastName, .secondary > div.lastName, .bishop > div.lastName {
+      margin-left: 0; }
+
+.work, .cell, .home {
+  color: #888; }
+
+.attPercent {
+  display: inline-block; }
+
+.button.button-balanced.attendanceBtn {
+  float: right;
+  border: none;
+  min-height: 24px;
+  line-height: 1.6; }
