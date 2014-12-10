@@ -59,7 +59,6 @@ app.controller('AppCtrl', function($scope, periodSvc ,$ionicModal, $timeout, $ht
 
     $scope.toggleExpanded = function (item){
         item.Expanded=!item.Expanded;
-        console.log(item + " expanded");
     };
 
 
@@ -81,7 +80,6 @@ app.controller('AppCtrl', function($scope, periodSvc ,$ionicModal, $timeout, $ht
     function init() {
         periodSvc.GetPeriods (function (data) {
             $scope.periods = data;
-            console.log(data);
         })
     }
     init();
@@ -98,8 +96,6 @@ app.controller('periodCtrl', function($scope, $stateParams, periodSvc) {
         if ($stateParams.periodId) {
             periodSvc.GetPeriod($stateParams.periodId, function (data) {
                 $scope.Period = data;
-
-                console.log(data);
             })
         }
     }
@@ -107,18 +103,15 @@ app.controller('periodCtrl', function($scope, $stateParams, periodSvc) {
 });//end period controller
 
 
-//attendance page
+
 
 //Vince's Code, Hiding/Showing student info
 app.controller('toggleStudents',['$scope', function($scope){
-    /*$scope.hide = true;
-    $scope.toggleCustom = function() {
-        $scope.hide = $scope.hide === false ? true: false;
-    };*/
+
 }]);
 
 
-
+//attendance page
 app.controller('attendanceCtrl', function($scope, $controller){
     $controller('periodCtrl', {$scope: $scope});
     var showMarkers = function(){
@@ -137,7 +130,6 @@ app.controller('attendanceCtrl', function($scope, $controller){
     };
     $scope.chosenMark="--";
     $scope.chooseMark = function(student,selMarker){//function (value, item){
-        console.log("attendance marked as " + selMarker);
         student.state.Chosen = selMarker;
         student.state.Expanded=false;
     };
@@ -172,9 +164,16 @@ app.controller('attendanceCtrl', function($scope, $controller){
 //end attendance page
 
 //student controller
-app.controller('studentCtrl', function($scope, $stateParams, $controller){
+app.controller('studentCtrl', function($scope, $stateParams, $controller, studentSvc){
     $controller('periodCtrl', {$scope: $scope});
-    console.log("Student ID: ", $stateParams);
+    function init() {
+        if ($stateParams.studentId) {
+            studentSvc.getStudent($stateParams.studentId, function (data) {
+                $scope.student = data;
+            })
+        }
+    }
+    init();
 
 });//end student controller
 
@@ -218,55 +217,63 @@ app.service('periodSvc', function($http) {
         'https://dgm3790.iriscouch.com/seminary_db/periods';
 
         $http.get(url, null)
-            .success(function(data) {
-                if (data.periods.length > 0) {
-                    for (var idx = 0; idx < data.periods.length; idx++) {
-                        var period = data.periods[idx];
-                        for (var i = 0; i < period.students.length; i++) {
-                            var student = period.students[i];
-                            var useOptions = [ {
-                                Disp:"--",
-                                Val:"none"
-                            },
-                            {
-                                Disp:"P",
-                                Val:"present"
-                            },
-                            {
-                                Disp:"U",
-                                Val:"unexcused"
-                            },
-                            {
-                                Disp:"T",
-                                Val:"tardy"
-                            },
-                            {
-                                Disp:"PE",
-                                Val:"parentExcused"
-                            },
-                            {
-                                Disp:"SE",
-                                Val:"schoolExcused"
-                            }];
-                            student.state = {
-                                Expanded:false,
-                                Options:useOptions,//student.options     <--use when data moves to json or backend
-                                Chosen:useOptions[0]//student.options[0] <--use when data moves to json or backend
-                            };
-                        }
+        .success(function(data) {
+            if (data.periods.length > 0) {
+                for (var idx = 0; idx < data.periods.length; idx++) {
+                    var period = data.periods[idx];
+                    for (var i = 0; i < period.students.length; i++) {
+                        var student = period.students[i];
+                        var useOptions = [ {
+                            Disp:"--",
+                            Val:"none"
+                        },
+                        {
+                            Disp:"P",
+                            Val:"present"
+                        },
+                        {
+                            Disp:"U",
+                            Val:"unexcused"
+                        },
+                        {
+                            Disp:"T",
+                            Val:"tardy"
+                        },
+                        {
+                            Disp:"PE",
+                            Val:"parentExcused"
+                        },
+                        {
+                            Disp:"SE",
+                            Val:"schoolExcused"
+                        }];
+                        student.state = {
+                            Expanded:false,
+                            Options:useOptions,//student.options     <--use when data moves to json or backend
+                            Chosen:useOptions[0]//student.options[0] <--use when data moves to json or backend
+                        };
                     }
                 }
-                cache.Periods = data.periods;
-                successFunc(data.periods);
-            })
-            .error(function(data){
-                console.log("get error");
-            });
+            }
+            cache.Periods = data.periods;
+            successFunc(data.periods);
+        })
+        .error(function(data){
+            console.log("get error");
+        });
     }
 });
 
-
-
+app.service('studentSvc', function($http){
+    this.getStudent = function(studentID, successFunc){
+        var student = studentID+".json";
+        var url = 'students/'+student;
+        $http.get(url, null)
+        .success(function(data){
+            successFunc(data);
+        });
+    };
+});
 
 app.controller('onoffCtrl', function($scope) {
     $scope.change = false;
