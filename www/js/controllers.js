@@ -176,16 +176,6 @@ app.controller('studentCtrl', function($scope, $stateParams, $controller){
     $controller('periodCtrl', {$scope: $scope});
     console.log("Student ID: ", $stateParams);
 
-    //old db code
-    /*var db = new PouchDB('https://deeger:Misured.9945@dgm3790.iriscouch.com/seminary_db');
-    //post=create  put=update-needs ID
-    db.post({
-        "name": "seminary_db test"
-    });
-
-    db.changes().on('change', function(){
-        console.log('changing DB')
-    });*/
 });//end student controller
 
 
@@ -279,8 +269,6 @@ app.service('periodSvc', function($http) {
 
 
 app.controller('onoffCtrl', function($scope) {
-
-
     $scope.change = false;
     $scope.onOff = function() {
         $scope.change = !$scope.change;
