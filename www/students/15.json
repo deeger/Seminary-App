@@ -1,0 +1,31 @@
+{
+  "firstName": "Ron",
+  "lastName": "Weasley",
+  "gender":"Male",
+  "picture": "img/studentPictures/picture7.jpg",
+  "schoolYear": "Sophomore",
+  "age": "18",
+  "birthday": "7 Jul 1996",
+  "attPercent": "82",
+  "primary": {
+    "firstName": "Richard",
+    "lastName": "Weasley",
+    "home": "801.921.1234",
+    "cell": "801.233.9876",
+    "address1": "1234 W 500 N",
+    "address2": " Orem UT 84057"
+  },
+  "secondary": {
+    "firstName": "Molley",
+    "lastName": "Weasley",
+    "cell": "801.456.6554",
+    "work": "801.765.1221",
+    "email": "richprice@gamil.com"
+  },
+  "bishop": {
+    "firstName": "Dale",
+    "lastName": "Cunningham",
+    "home": "435.543.1234",
+    "email": "cunningbishop@ldschurch.org"
+  }
+}

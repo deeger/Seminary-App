@@ -1,0 +1,25 @@
+{
+  "firstName": "Homer",
+  "lastName": "Simpson",
+  "gender":"Male",
+  "picture": "img/studentPictures/homer.jpg",
+  "schoolYear": "Freshman",
+  "age": "55",
+  "birthday": "19 Sep 1986",
+  "attPercent": "94",
+  "primary": {
+    "firstName": "Dad",
+    "lastName": "Simpson",
+    "home": "801.921.1234",
+    "cell": "801.233.9876",
+    "work": "801.765.1221",
+    "email": "richprice@gamil.com",
+    "address1": "1234 W 500 N",
+    "address2": " Orem UT 84057"
+  },
+  "secondary": {
+    "firstName": "Marge",
+    "lastName": "Simpson",
+    "cell": "801.456.6554"
+  }
+}

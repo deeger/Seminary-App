@@ -1,0 +1,31 @@
+{
+  "firstName": "Winston",
+  "lastName": "Churchhill",
+  "gender":"Male",
+  "picture": "img/studentPictures/winston.jpg",
+  "schoolYear": "Senior",
+  "age": "18",
+  "birthday": "7 Jul 1996",
+  "attPercent": "89",
+  "primary": {
+    "firstName": "Richard",
+    "lastName": "Churchhill",
+    "home": "801.999.1214",
+    "cell": "801.113.9876"
+  },
+  "secondary": {
+    "firstName": "Susan",
+    "lastName": "Churchhill",
+    "cell": "801.456.6554",
+    "work": "801.765.1221",
+    "email": "richprice@gamil.com",
+    "address1": "1234 W 500 N",
+    "address2": " Orem UT 84057"
+  },
+  "bishop": {
+    "firstName": "Sam",
+    "lastName": "Walton",
+    "home": "435.543.1234",
+    "email": "cunningbishop@ldschurch.org"
+  }
+}

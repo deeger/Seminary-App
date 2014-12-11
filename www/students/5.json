@@ -1,0 +1,31 @@
+{
+  "firstName": "Payton",
+  "lastName": "Manning",
+  "gender":"Male",
+  "picture": "img/studentPictures/noPhoto.jpg",
+  "schoolYear": "Sophomore",
+  "age": "18",
+  "birthday": "7 Jul 1996",
+  "attPercent": "14",
+  "primary": {
+    "firstName": "Richard",
+    "lastName": "Manning",
+    "cell": "801.233.9876",
+    "work": "801.765.1221",
+    "email": "richprice@gamil.com",
+    "address1": "1234 W 500 N",
+    "address2": " Orem UT 84057"
+  },
+  "secondary": {
+    "firstName": "Susan",
+    "lastName": "Manning",
+    "cell": "801.456.6554",
+    "home": "801.921.1234"
+  },
+  "bishop": {
+    "firstName": "Dale",
+    "lastName": "Cunningham",
+    "home": "435.222.1222",
+    "email": "cunningbishop@ldschurch.org"
+  }
+}

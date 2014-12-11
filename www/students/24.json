@@ -1,0 +1,31 @@
+{
+  "firstName": "Jamal",
+  "lastName": "Williams",
+  "gender":"Male",
+  "picture": "img/studentPictures/jamal.jpg",
+  "schoolYear": "Senior",
+  "age": "18",
+  "birthday": "7 Jul 1996",
+  "attPercent": "90",
+  "primary": {
+    "firstName": "Richard",
+    "lastName": "Williams",
+    "home": "801.921.1234",
+    "cell": "801.233.9876",
+    "work": "801.765.1221",
+    "email": "richprice@gamil.com"
+  },
+  "secondary": {
+    "firstName": "Susan",
+    "lastName": "Williams",
+    "cell": "801.456.6554",
+    "address1": "1234 W 500 N",
+    "address2": " Orem UT 84057"
+  },
+  "bishop": {
+    "firstName": "Frank",
+    "lastName": "Wilson",
+    "home": "435.543.1234",
+    "email": "cunningbishop@ldschurch.org"
+  }
+}

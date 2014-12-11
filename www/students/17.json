@@ -1,0 +1,31 @@
+{
+  "firstName": "Walter",
+  "lastName": "Mitty",
+  "gender":"Male",
+  "picture": "img/studentPictures/picture4.jpg",
+  "schoolYear": "Junior",
+  "age": "18",
+  "birthday": "7 Jul 1996",
+  "attPercent": "94",
+  "primary": {
+    "firstName": "Richard",
+    "lastName": "Mitty",
+    "home": "801.921.1234",
+    "cell": "801.233.9876",
+    "work": "801.765.1221",
+    "email": "richprice@gamil.com",
+    "address1": "1234 W 500 N",
+    "address2": " Orem UT 84057"
+  },
+  "secondary": {
+    "firstName": "Susan",
+    "lastName": "Mitty",
+    "cell": "801.456.6554"
+  },
+  "bishop": {
+    "firstName": "Dale",
+    "lastName": "Cunningham",
+    "home": "435.543.1234",
+    "email": "cunningbishop@ldschurch.org"
+  }
+}

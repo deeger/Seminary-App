@@ -1,0 +1,31 @@
+{
+  "firstName": "Carry",
+  "lastName": "Walsch",
+  "gender":"Male",
+  "picture":"img/studentPictures/picture2.jpg",
+  "schoolYear": "Senior",
+  "age": "78",
+  "birthday": "7 Jul 1996",
+  "attPercent": "07",
+  "primary": {
+    "firstName": "Richard",
+    "lastName": "Walsch",
+    "home": "801.931.1234",
+    "cell": "801.233.9876",
+    "work": "801.735.1231",
+    "email": "richprice@gamil.com",
+    "address1": "1234 W 500 N",
+    "address2": " Orem UT 84057"
+  },
+  "secondary": {
+    "firstName": "Susan",
+    "lastName": "Walsch",
+    "cell": "801.436.3354"
+  },
+  "bishop": {
+    "firstName": "Mike",
+    "lastName": "Shanahan",
+    "home": "433.533.3334",
+    "email": "cunningbishop@ldschurch.org"
+  }
+}

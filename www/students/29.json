@@ -1,0 +1,21 @@
+{
+  "firstName": "Alani",
+  "lastName": "Fua",
+  "gender":"Male",
+  "picture": "img/studentPictures/noPhoto.jpg",
+  "schoolYear": "Senior",
+  "age": "18",
+  "birthday": "7 Jul 1996",
+  "attPercent": "94",
+  "primary": {
+    "firstName": "Richard",
+    "lastName": "Fua",
+    "home": "801.921.1234",
+    "cell": "801.233.9876"
+  },
+  "bishop": {
+    "firstName": "Dale",
+    "lastName": "Cunningham",
+    "email": "cunningbishop@ldschurch.org"
+  }
+}

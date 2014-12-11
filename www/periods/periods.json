@@ -171,8 +171,7 @@
                 "lastName":"Leavitt",
                 "picture":"img/studentPictures/picture6.jpg",
                 "schoolYear":"Junior",
-                "attPercent":"93",
-                "options":[{"todo":"usetheObject in the js"},{}]
+                "attPercent":"93"
             },
             {
                 "studentId":"32",
