@@ -11,7 +11,12 @@
             <div class="lastName">{{student.lastName}}</div>
         </h2>
         <div class="student">
-            <div class="picture"><img src="{{student.picture}}" /></div>
+            <div class="picture">
+                <img src="{{student.picture}}" />
+                <div class="newPicture" ng-click="newPicture()">
+                    <img src="img/edit.png"/>
+                </div>
+            </div>
             <div class="gender">{{student.gender}}</div>
             <div class="schoolYear">{{student.schoolYear}}</div>
             <div class="age">{{student.age}}</div>
@@ -22,43 +27,43 @@
             <div class="attPercent">{{student.attPercent}}%</div>
             <button class="button button-balanced attendanceBtn">View</button>
         </div><!--end.attendance-->
-        <div class="primary">
+        <div class="primary" ng-show="student.primary">
             <h3>Primary</h3>
             <div class="firstName">{{student.primary.firstName}}</div>
             <div class="lastName">{{student.primary.lastName}}</div>
-            <div class="home">H: <a href="tel:{{student.primary.home}}">{{student.primary.home}}</a></div>
-            <div class="cell">C: <a href="tel:{{student.primary.cell}}">{{student.primary.cell}}</a></div>
-            <div class="work">W: <a href="tel:{{student.primary.work}}">{{student.primary.work}}</a></div>
-            <div class="email"><a href="mailto:{{student.primary.email}}">{{student.primary.email}}</a></div>
+            <div class="home" ng-show="student.primary.home">H: <a href="tel:{{student.primary.home}}">{{student.primary.home}}</a></div>
+            <div class="cell" ng-show="student.primary.cell">C: <a href="tel:{{student.primary.cell}}">{{student.primary.cell}}</a></div>
+            <div class="work" ng-show="student.primary.work">W: <a href="tel:{{student.primary.work}}">{{student.primary.work}}</a></div>
+            <div class="email" ng-show="student.primary.email"><a href="mailto:{{student.primary.email}}">{{student.primary.email}}</a></div>
             <div class="address">
-                <div class="address1">{{student.primary.address1}}</div>
-                <div class="address2">{{student.primary.address2}}</div>
+                <div class="address1" ng-show="student.primary.address1">{{student.primary.address1}}</div>
+                <div class="address2" ng-show="student.primary.address2">{{student.primary.address2}}</div>
             </div>
         </div><!--end.primary-->
-        <div class="secondary">
+        <div class="secondary" ng-show="student.secondary">
             <h3>Secondary</h3>
             <div class="firstName">{{student.secondary.firstName}}</div>
             <div class="lastName">{{student.secondary.lastName}}</div>
-            <div class="home">H: <a href="tel:{{student.secondary.home}}">{{student.secondary.home}}</a></div>
-            <div class="cell">C: <a href="tel:{{student.secondary.cell}}">{{student.secondary.cell}}</a></div>
-            <div class="work">W: <a href="tel:{{student.secondary.work}}">{{student.secondary.work}}</a></div>
-            <div class="email"><a href="mailto:{{student.secondary.email}}">{{student.secondary.email}}</a></div>
+            <div class="home" ng-show="student.secondary.home">H: <a href="tel:{{student.secondary.home}}">{{student.secondary.home}}</a></div>
+            <div class="cell" ng-show="student.secondary.cell">C: <a href="tel:{{student.secondary.cell}}">{{student.secondary.cell}}</a></div>
+            <div class="work" ng-show="student.secondary.work">W: <a href="tel:">{{student.secondary.work}}</a></div>
+            <div class="email" ng-show="student.secondary.email"><a href="mailto:{{student.secondary.email}}">{{student.secondary.email}}</a></div>
             <div class="address">
-                <div class="address1">{{student.secondary.address1}}</div>
-                <div class="address2">{{student.secondary.address2}}</div>
+                <div class="address1" ng-show="student.secondary.address1">{{student.secondary.address1}}</div>
+                <div class="address2" ng-show="student.secondary.address2">{{student.secondary.address2}}</div>
             </div>
         </div><!--end.secondary-->
-        <div class="bishop">
+        <div class="bishop" ng-show="student.bishop">
             <h3>Bishop</h3>
             <div class="firstName">{{student.bishop.firstName}}</div>
             <div class="lastName">{{student.bishop.lastName}}</div>
-            <div class="home">H: <a href="tel:{{student.bishop.home}}">{{student.bishop.home}}</a></div>
-            <div class="cell">C: <a href="tel:{{student.bishop.cell}}">{{student.bishop.cell}}</a></div>
-            <div class="work">W: <a href="tel:{{student.bishop.work}}">{{student.bishop.work}}</a></div>
-            <div class="email"><a href="mailto:{{student.bishop.email}}">{{student.bishop.email}}</a></div>
+            <div class="home" ng-show="student.bishop.home">H: <a href="tel:{{student.bishop.home}}">{{student.bishop.home}}</a></div>
+            <div class="cell" ng-show="student.bishop.cell">C: <a href="tel:{{student.bishop.cell}}">{{student.bishop.cell}}</a></div>
+            <div class="work" ng-show="student.bishop.work">W: <a href="tel:{{student.bishop.work}}">{{student.bishop.work}}</a></div>
+            <div class="email" ng-show="student.bishop.email"><a href="mailto:{{student.bishop.email}}">{{student.bishop.email}}</a></div>
             <div class="address">
-                <div class="address1">{{student.bishop.address1}}</div>
-                <div class="address2">{{student.bishop.address2}}</div>
+                <div class="address1" ng-show="student.bishop.address1">{{student.bishop.address1}}</div>
+                <div class="address2" ng-show="student.bishop.address2">{{student.bishop.address2}}</div>
             </div>
         </div><!--end.secondary-->
     </ion-content>
