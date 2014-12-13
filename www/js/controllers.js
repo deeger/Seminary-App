@@ -205,7 +205,11 @@ app.controller('gradeBookCtrl', function($scope, $controller, $stateParams, peri
 
 
 //messaging controller
-app.controller('messagingCtrl', function($scope, $controller){
+app.controller('messagingCtrl', function($scope, $controller, $stateParams, periodSvc){
+    periodSvc.GetPeriod($stateParams.periodId,function(data){
+
+        $scope.Period = data;
+    });
 });//end messaging controller
 
 
