@@ -1,8 +1,5 @@
-<div>
-
-    <ion-list id="changePeriod">
-        <ion-item ng-repeat="p in periods"  ng-click="clicked()" ui-sref="app.{{siteTool}}({periodId:p.periodNum})">
-            Period {{p.periodNum}}
-        </ion-item>
-    </ion-list>
-</div>
+<ion-list>
+    <ion-item ng-repeat="p in periods"  ng-click="clicked()" ui-sref="app.{{siteTool}}({periodId:p.periodNum})">
+        Period {{p.periodNum}}
+    </ion-item>
+</ion-list>
