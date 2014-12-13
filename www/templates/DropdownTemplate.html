@@ -1,0 +1,14 @@
+<div> <h3>hi there</h3>
+<ion-nav-buttons>
+    <button id="changePeriodBtn"
+            ng-click='toggleExpanded()'
+            ng-show='selectedPeriod' ng-class="{'ion-chevron-down' :!expanded, 'ion-chevron-up': expanded}"
+            class='button center button-icon icon icon-right'>
+        Period {{selectedPeriod.periodNum}}
+    </button>
+    <div ng-show="expanded">
+
+        <period-list periods="periods" site-tool="{{tool}}" clicked="toggleExpanded()"></period-list>
+    </div>
+</ion-nav-buttons>
+</div>

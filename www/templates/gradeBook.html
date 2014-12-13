@@ -2,8 +2,15 @@
     <ion-nav-buttons side="left">
         <button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
     </ion-nav-buttons>
+    <period-nav periods="periods" selected-period="Period" tool="gradeBook"></period-nav>
     <ion-content class="has-header">
         <h1>Grade Book</h1>
+        <period-list periods="periods" site-tool="gradeBook" ng-show="!Period"></period-list>
+        <div ng-show="Period">
+            {{Period}}
+        </div>
+
     </ion-content>
+
 </ion-view>
 
