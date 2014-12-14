@@ -4,22 +4,9 @@
             <button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
         </span>
     </ion-nav-buttons>
-    <ion-nav-buttons>
-        <button id="changePeriodBtn"
-                ng-click='toggleExpanded(changePeriod)'
-                ng-show='Period' ng-class="{'ion-chevron-down' :!changePeriod.Expanded, 'ion-chevron-up': changePeriod.Expanded}"
-                class='button center button-icon icon icon-right'>
-            Period {{Period.periodNum}}
-        </button>
-    </ion-nav-buttons>
 
-    <!--shows when change period button is clicked-->
-    <ion-list id="changePeriod" ng-show="changePeriod.Expanded">
-        <ion-item ng-repeat="period in periods"  ng-click="changePeriodClose(changePeriod, period)" ui-sref="app.attendance({periodId:period.periodNum})">
-            Period {{period.periodNum}}
-        </ion-item>
-    </ion-list>
-    <period-nav></period-nav>
+    <period-nav periods="periods" selected-period="Period" tool="attendance"></period-nav>
+
 
     <ion-header-bar class="dateNav bar-subheader bar-calm" ng-show="Period" na-title-slide-ios7>
         <button ng-click="previous()"  class="button prevBtn icon ion-arrow-left-c"></button>
@@ -29,11 +16,8 @@
 
     <ion-content class="has-header">
         <!--when no period is chosen-->
-        <ion-list id="pickPeriod" ng-show="!Period">
-            <ion-item ng-repeat="period in periods" ng-click="initPeriod(period)" ui-sref="app.attendance({periodId:period.periodNum})">
-                Period {{period.periodNum}}
-            </ion-item>
-        </ion-list>
+        <period-list id="pickPeriod" periods="periods" site-tool="attendance" ng-show="!Period"></period-list>
+
 
         <div class="myStudents" ng-show="Period">
             <div ng-controller="commentBox">
@@ -84,6 +68,7 @@
             </div><!--end toggle students controller-->
         </div>
     </ion-content>
+<<<<<<< HEAD
 
 
     <script id="modal.html" type="text/ng-template">
@@ -116,3 +101,9 @@
 
 
 </ion-view>
+=======
+</ion-view>
+<h3>
+hello there{{Period}}
+</h3>
+>>>>>>> origin

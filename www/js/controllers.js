@@ -1,4 +1,4 @@
-var app = angular.module('starter.controllers', []);
+
 
 
 
@@ -29,7 +29,9 @@ app.controller('sampleCtrl', ['$scope', 'angularPopupBoxes', function($scope, po
 
 
 app.controller('AppCtrl', function($scope, periodSvc ,$ionicModal, $timeout, $http) {
+
     $scope.hide = true;
+
     $scope.toggleCustom = function() {
         $scope.hide = $scope.hide === false ? true: false;
     };
@@ -37,24 +39,7 @@ app.controller('AppCtrl', function($scope, periodSvc ,$ionicModal, $timeout, $ht
     window.debugScope = $scope;
 
     //Date Functionality
-    $scope.initPeriod = function(periodId) {
-        $http.get('periods/days.json')
-            .success(function (data) {
-                $scope.dayData = data;
-                var today = new Date();
-                $scope.periodId = periodId;
-                for(var i = 0; i < data.length; i++){
-                    var parts = data[i].date.split("-");
-                    var newDate = new Date([parts[0], parts[1],parts[2]]);
-                    if(newDate.getDate() >= today.getDate() && newDate.getMonth() >= today.getMonth() && newDate.getFullYear() >= today.getFullYear() && data[i].dayType == periodId.classSchedule){
-                        $scope.date = data[i].date;
-                        break;
-                    }
-                }
-            }) .error(function () {
-                alert("error");
-            });
-    };
+
 
     $scope.next = function (){
         for(var i = 0; i < $scope.dayData.length; i++){
@@ -119,6 +104,7 @@ app.controller('AppCtrl', function($scope, periodSvc ,$ionicModal, $timeout, $ht
 });
 
 
+<<<<<<< HEAD
 
 app.controller('periodCtrl', function($scope, $stateParams, periodSvc) {
     window.debugScope = $scope;
@@ -131,6 +117,8 @@ app.controller('periodCtrl', function($scope, $stateParams, periodSvc) {
     }
     init();
 });//end period controller
+=======
+>>>>>>> origin
 
 
 
@@ -174,8 +162,38 @@ app.controller('commentBox', function($scope,$ionicModal){
 
 
 //attendance page
-app.controller('attendanceCtrl', function($scope, $controller){
-    $controller('periodCtrl', {$scope: $scope});
+app.controller('attendanceCtrl', function($scope, $controller, $stateParams, periodSvc,$http){
+
+
+    $scope.initPeriod = function(periodId) {
+
+
+        periodSvc.GetPeriod(periodId,function(data){
+            $scope.Period = data;
+        });
+        $http.get('periods/days.json')
+            .success(function (data) {
+
+                //$scope.Period = periodId;
+                //$scope.Period={periodNum:'abc'};
+                $scope.dayData = data;
+                var today = new Date();
+                $scope.periodId = periodId;
+                for(var i = 0; i < data.length; i++){
+                    var parts = data[i].date.split("-");
+                    var newDate = new Date([parts[0], parts[1],parts[2]]);
+                    if(newDate.getDate() >= today.getDate() && newDate.getMonth() >= today.getMonth() && newDate.getFullYear() >= today.getFullYear() && data[i].dayType == periodId.classSchedule){
+                        $scope.date = data[i].date;
+                        break;
+                    }
+                }
+            }) .error(function () {
+                alert("error");
+            });
+    };
+
+    $scope.initPeriod($stateParams.periodId);
+
     var showMarkers = function(){
 
     }
@@ -234,7 +252,6 @@ app.controller('attendanceCtrl', function($scope, $controller){
 
 //student controller
 app.controller('studentCtrl', function($scope, $stateParams, $controller, studentSvc){
-    $controller('periodCtrl', {$scope: $scope});
     function init() {
         if ($stateParams.studentId) {
             studentSvc.getStudent($stateParams.studentId, function (data) {
@@ -243,7 +260,7 @@ app.controller('studentCtrl', function($scope, $stateParams, $controller, studen
         }
     }
     init();
-    function newPicture(){
+    $scope.newPicture = function(){
          console.log("take picture with camera");
          navigator.camera.getPicture(function(imageURI) {
 
@@ -260,14 +277,21 @@ app.controller('studentCtrl', function($scope, $stateParams, $controller, studen
 
 
 //gradebook controller
-app.controller('gradeBookCtrl', function($scope, $controller){
-    $controller('periodCtrl', {$scope: $scope});
+app.controller('gradeBookCtrl', function($scope, $controller, $stateParams, periodSvc){
+
+    periodSvc.GetPeriod($stateParams.periodId,function(data){
+
+        $scope.Period = data;
+    });
 });//end gradebook controller
 
 
 //messaging controller
-app.controller('messagingCtrl', function($scope, $controller){
-    $controller('periodCtrl', {$scope: $scope});
+app.controller('messagingCtrl', function($scope, $controller, $stateParams, periodSvc){
+    periodSvc.GetPeriod($stateParams.periodId,function(data){
+
+        $scope.Period = data;
+    });
 });//end messaging controller
 
 
@@ -280,15 +304,27 @@ app.controller('languageCtrl', function($scope){
 //all http services defined here.
 app.service('periodSvc', function($http) {
     var cache = {};
+
+    var cacheSearch=function(periodId){
+        for(var i = 0; i < cache.Periods.length; i++) {
+            if (cache.Periods[i].periodNum == periodId) {
+                return cache.Periods[i];
+                //successFunc(cache.Periods[i]);
+                break;
+            }
+        }
+    }
     //stores period info so that it doesn't have to call every time you switch periods
     this.GetPeriod = function(periodId, successFunc) {
+        if(!cache.Periods){
+            this.GetPeriods (function(data){
+                var loaded = cacheSearch(periodId);
+                successFunc(loaded)
+            })
+        }
         if (cache.Periods) {
-            for(var i = 0; i < cache.Periods.length; i++) {
-                if (cache.Periods[i].periodNum == periodId) {
-                    successFunc(cache.Periods[i]);
-                    break;
-                }
-            }
+            var cached = cacheSearch(periodId);
+            successFunc(cached);
         }
     };
 
