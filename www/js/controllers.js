@@ -1,5 +1,33 @@
 var app = angular.module('starter.controllers', []);
 
+
+
+//popup
+app.controller('sampleCtrl', ['$scope', 'angularPopupBoxes', function($scope, popup)
+{
+    // You can change the texts at any time!
+    // popup.setTexts('Yep :D', 'Nop =/');
+
+
+    $scope.inputSample = function()
+    {
+        popup.input("Type something... Pleeeeease").result.then(function(input)
+        {
+            alert('Wow man, you just typed "' + input + '"');
+        }, function()
+        {
+            alert('Or don\'t :D');
+        });
+    };
+
+
+}]);
+
+
+
+
+
+
 app.controller('AppCtrl', function($scope, periodSvc ,$ionicModal, $timeout, $http) {
     $scope.hide = true;
     $scope.toggleCustom = function() {
@@ -90,6 +118,8 @@ app.controller('AppCtrl', function($scope, periodSvc ,$ionicModal, $timeout, $ht
     }
 });
 
+
+
 app.controller('periodCtrl', function($scope, $stateParams, periodSvc) {
     window.debugScope = $scope;
     function init() {
@@ -105,10 +135,42 @@ app.controller('periodCtrl', function($scope, $stateParams, periodSvc) {
 
 
 
-//Vince's Code, Hiding/Showing student info
-app.controller('toggleStudents',['$scope', function($scope){
+//Comments
+app.controller('commentBox', function($scope,$ionicModal){
+    $scope.toDoListItems = [
+        {
 
-}]);
+
+        }
+    ];
+
+
+    $scope.AddItem = function (data) {
+
+
+        $scope.closeModal();
+    };
+
+    $ionicModal.fromTemplateUrl('modal.html', {
+        scope: $scope,
+    }).then(function (modal) {
+        $scope.modal = modal;
+    });
+
+    $scope.openModal = function () {
+        $scope.modal.show();
+    };
+    $scope.closeModal = function () {
+        $scope.modal.hide();
+    };
+
+    //Cleanup the modal when we're done with it!
+    $scope.$on('$destroy', function () {
+        $scope.modal.remove();
+    })
+
+})
+;
 
 
 //attendance page
@@ -117,6 +179,13 @@ app.controller('attendanceCtrl', function($scope, $controller){
     var showMarkers = function(){
 
     }
+
+
+
+
+
+
+
 
     $scope.toggleMarkersExpanded = function (item) {
         if (!item.Expanded) {

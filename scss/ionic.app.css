@@ -11,10 +11,10 @@ Error: File to import not found or unreadable: www/lib/ionic/scss/ionic.
 21: // Include all of Ionic
 22: @import "www/lib/ionic/scss/ionic";
 23: 
-24: .bar.bar-calm{
-25:   color:$stable;
-26:   .title{
-27:     color:$stable;
+24: @mixin clear() {
+25:   &:before, &:after {
+26:     content: "\0020";
+27:     display: block;
 
 Backtrace:
 ionic.app.scss:22
@@ -60,4 +60,4 @@ ionic.app.scss:22
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: File to import not found or unreadable: www/lib/ionic/scss/ionic.\A        Load paths:\A          \A         on line 22 of ionic.app.scss\A \A 17: \A 18: // The path for our ionicons font files, relative to the built CSS in www/css\A 19: $ionicons-font-path: \"../lib/ionic/fonts\" !default;\A 20: \A 21: // Include all of Ionic\A 22: @import \"www/lib/ionic/scss/ionic\";\A 23: \A 24: .bar.bar-calm{\A 25:   color:$stable;\A 26:   .title{\A 27:     color:$stable;"; }
+  content: "Error: File to import not found or unreadable: www/lib/ionic/scss/ionic.\A        Load paths:\A          \A         on line 22 of ionic.app.scss\A \A 17: \A 18: // The path for our ionicons font files, relative to the built CSS in www/css\A 19: $ionicons-font-path: \"../lib/ionic/fonts\" !default;\A 20: \A 21: // Include all of Ionic\A 22: @import \"www/lib/ionic/scss/ionic\";\A 23: \A 24: @mixin clear() {\A 25:   &:before, &:after {\A 26:     content: \"\0020\";\A 27:     display: block;"; }
