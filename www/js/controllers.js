@@ -61,7 +61,7 @@ app.controller('AppCtrl', function($scope, periodSvc ,$ionicModal, $timeout, $ht
         }
     };
 
-    //original call to ger periods
+    //original call to get periods
     function init() {
         periodSvc.GetPeriods (function (data) {
             $scope.periods = data;
@@ -94,6 +94,19 @@ app.controller('attendanceCtrl', function($scope, $controller, $stateParams, per
 
 
         periodSvc.GetPeriod(periodId,function(data){
+            //Sort Data by Last Name
+            try {
+                for (var i = 0; i < data.students.length; i++) {
+                    for (var j = 0; j < data.students.length - 1; j++) {
+                        if (data.students[j].lastName > data.students[j + 1].lastName) {
+                            var temp = data.students[j];
+                            data.students[j] = data.students[j + 1];
+                            data.students[j + 1] = temp;
+                        }
+                    }
+                }
+            }
+            catch(e){}
             $scope.Period = data;
         });
         $http.get('periods/days.json')
