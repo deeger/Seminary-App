@@ -123,24 +123,6 @@ app.controller('attendanceCtrl', function($scope, $controller, $stateParams, per
                 }
             });
         });
-        /*$http.get('periods/days.json')
-            .success(function (data) {
-                $scope.dayData = data;
-                var today = new Date();
-                periodSvc.GetPeriod(periodId, function(periodData){
-
-                    for(var i = 0; i < data.length; i++){
-                        var parts = data[i].date.split("-");
-                        var newDate = new Date([parts[0], parts[1],parts[2]]);
-                        if(newDate.getDate() >= today.getDate() && newDate.getMonth() >= today.getMonth() && newDate.getFullYear() >= today.getFullYear() && data[i].dayType == periodData.classSchedule){
-                            $scope.date = data[i].date;
-                            break;
-                        }
-                    }
-                });
-            }) .error(function () {
-                alert("error");
-            });*/
     };
 
     $scope.initPeriod($stateParams.periodId);
