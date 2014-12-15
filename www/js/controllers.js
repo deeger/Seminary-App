@@ -10,33 +10,6 @@ app.controller('AppCtrl', function($scope, periodSvc ,$ionicModal, $timeout, $ht
 
     window.debugScope = $scope;
 
-    //Date Functionality
-
-
-    $scope.next = function (){
-        for(var i = 0; i < $scope.dayData.length; i++){
-            if($scope.dayData[i].date > $scope.date){
-                if($scope.dayData[i].dayType == $scope.periodId.classSchedule){
-                    $scope.date = $scope.dayData[i].date;
-                    break;
-                }
-            }
-        }
-    };
-
-    $scope.previous = function (){
-        for(var i = $scope.dayData.length - 1; i >= 0; i--){
-            if($scope.dayData[i].date < $scope.date){
-                if($scope.dayData[i].dayType == $scope.periodId.classSchedule){
-                    $scope.date = $scope.dayData[i].date;
-                    break;
-                }
-            }
-        }
-    };//end Date Functionality
-
-
-
 
     $scope.changePeriod ={};
     $scope.markAll = {};
@@ -89,8 +62,34 @@ app.controller('toggleStudents',['$scope', function($scope){
 //attendance page
 app.controller('attendanceCtrl', function($scope, $controller, $stateParams, periodSvc,$http){
 
-
     $scope.initPeriod = function(periodId) {
+
+        $scope.next = function (){
+            periodSvc.GetPeriod(periodId, function(periodData){
+                for(var i = 0; i < $scope.dayData.length; i++){
+                    if($scope.dayData[i].date > $scope.date){
+                        if($scope.dayData[i].dayType == periodData.classSchedule){
+                            $scope.date = $scope.dayData[i].date;
+                            break;
+                        }
+                    }
+                }
+            });
+        };
+
+
+        $scope.previous = function (){
+            periodSvc.GetPeriod(periodId, function(periodData) {
+                for (var i = $scope.dayData.length - 1; i >= 0; i--) {
+                    if ($scope.dayData[i].date < $scope.date) {
+                        if ($scope.dayData[i].dayType == periodData.classSchedule) {
+                            $scope.date = $scope.dayData[i].date;
+                            break;
+                        }
+                    }
+                }
+            });
+        };
 
 
         periodSvc.GetPeriod(periodId,function(data){
@@ -111,20 +110,19 @@ app.controller('attendanceCtrl', function($scope, $controller, $stateParams, per
         });
         $http.get('periods/days.json')
             .success(function (data) {
-
-                //$scope.Period = periodId;
-                //$scope.Period={periodNum:'abc'};
                 $scope.dayData = data;
                 var today = new Date();
-                $scope.periodId = periodId;
-                for(var i = 0; i < data.length; i++){
-                    var parts = data[i].date.split("-");
-                    var newDate = new Date([parts[0], parts[1],parts[2]]);
-                    if(newDate.getDate() >= today.getDate() && newDate.getMonth() >= today.getMonth() && newDate.getFullYear() >= today.getFullYear() && data[i].dayType == periodId.classSchedule){
-                        $scope.date = data[i].date;
-                        break;
+                periodSvc.GetPeriod(periodId, function(periodData){
+
+                    for(var i = 0; i < data.length; i++){
+                        var parts = data[i].date.split("-");
+                        var newDate = new Date([parts[0], parts[1],parts[2]]);
+                        if(newDate.getDate() >= today.getDate() && newDate.getMonth() >= today.getMonth() && newDate.getFullYear() >= today.getFullYear() && data[i].dayType == periodData.classSchedule){
+                            $scope.date = data[i].date;
+                            break;
+                        }
                     }
-                }
+                });
             }) .error(function () {
                 alert("error");
             });
