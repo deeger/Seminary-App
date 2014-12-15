@@ -54,9 +54,43 @@ app.controller('AppCtrl', function($scope, periodSvc ,$ionicModal, $timeout, $ht
 
 
 //Vince's Code, Hiding/Showing student info
-app.controller('toggleStudents',['$scope', function($scope){
+app.controller('commentBox', function($scope,$ionicModal){
+    $scope.toDoListItems = [
+        {
 
-}]);
+
+        }
+    ];
+
+
+    $scope.AddItem = function (data) {
+
+
+        $scope.closeModal();
+    };
+
+    $ionicModal.fromTemplateUrl('modal.html', {
+        scope: $scope
+    }).then(function (modal) {
+        $scope.modal = modal;
+    });
+
+    $scope.openModal = function () {
+        $scope.modal.show();
+    };
+    $scope.closeModal = function () {
+        $scope.modal.hide();
+    };
+
+//Cleanup the modal when we're done with it!
+    $scope.$on('$destroy', function () {
+        $scope.modal.remove();
+    })
+
+})
+;
+
+
 
 
 //attendance page
