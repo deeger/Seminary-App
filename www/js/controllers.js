@@ -60,7 +60,7 @@ app.controller('toggleStudents',['$scope', function($scope){
 
 
 //attendance page
-app.controller('attendanceCtrl', function($scope, $controller, $stateParams, periodSvc,$http){
+app.controller('attendanceCtrl', function($scope, $controller, $stateParams, periodSvc, dateSvc){
 
     $scope.initPeriod = function(periodId) {
 
@@ -108,7 +108,22 @@ app.controller('attendanceCtrl', function($scope, $controller, $stateParams, per
             catch(e){}
             $scope.Period = data;
         });
-        $http.get('periods/days.json')
+        dateSvc.getDate(function(data){
+            $scope.dayData = data;
+            var today = new Date();
+            periodSvc.GetPeriod(periodId, function(periodData){
+
+                for(var i = 0; i < data.length; i++){
+                    var parts = data[i].date.split("-");
+                    var newDate = new Date([parts[0], parts[1],parts[2]]);
+                    if(newDate.getDate() >= today.getDate() && newDate.getMonth() >= today.getMonth() && newDate.getFullYear() >= today.getFullYear() && data[i].dayType == periodData.classSchedule){
+                        $scope.date = data[i].date;
+                        break;
+                    }
+                }
+            });
+        });
+        /*$http.get('periods/days.json')
             .success(function (data) {
                 $scope.dayData = data;
                 var today = new Date();
@@ -125,7 +140,7 @@ app.controller('attendanceCtrl', function($scope, $controller, $stateParams, per
                 });
             }) .error(function () {
                 alert("error");
-            });
+            });*/
     };
 
     $scope.initPeriod($stateParams.periodId);
@@ -308,6 +323,18 @@ app.service('periodSvc', function($http) {
             console.log("get error");
         });
     }
+});
+
+
+app.service('dateSvc', function($http){
+
+    this.getDate = function(successFunc){
+        var url = 'periods/days.json';
+        $http.get(url, null)
+            .success(function(data){
+                successFunc(data);
+            });
+    };
 });
 
 app.service('studentSvc', function($http){
