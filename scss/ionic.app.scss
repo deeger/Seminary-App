@@ -139,10 +139,12 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 }
 .fName {
   display: inline;
+  padding-top:5px;
 }
 .lName {
   font-weight: bold;
   display: inline;
+  padding-top:5px;
 }
 .photo img{
   float: left;
@@ -158,6 +160,17 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
   color: $grey;
   font-size: .85em;
   display:inline-block;
+}
+.note{
+  float:right;
+  margin: 0 10px 0 0;
+
+  button{
+    border:none;
+    background:none;
+    color:$lGrey;
+    font-size:1.5em;
+  }
 }
 .attMarker {
   cursor:pointer;

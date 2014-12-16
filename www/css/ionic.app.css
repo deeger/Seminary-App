@@ -7895,11 +7895,13 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
     text-decoration: none; }
 
 .fName {
-  display: inline; }
+  display: inline;
+  padding-top: 5px; }
 
 .lName {
   font-weight: bold;
-  display: inline; }
+  display: inline;
+  padding-top: 5px; }
 
 .photo img {
   float: left;
@@ -7915,6 +7917,15 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
   color: #888;
   font-size: 0.85em;
   display: inline-block; }
+
+.note {
+  float: right;
+  margin: 0 10px 0 0; }
+  .note button {
+    border: none;
+    background: none;
+    color: #bbbbbb;
+    font-size: 1.5em; }
 
 .attMarker {
   cursor: pointer;
