@@ -24,7 +24,7 @@ Once in a class a teacher can navigate to days within that class and mark attend
         
         $ git clone https://github.com/deeger/Seminary-App.git
         
-        $ cd <into Seminary-App>
+        $ cd Seminary-App
 
 **4. After Installation Run App**
 
