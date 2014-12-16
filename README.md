@@ -8,30 +8,30 @@ Once in a class a teacher can navigate to days within that class and mark attend
 
 ##Instructions for demo:
 
-**1. grunt and bower required**
+**Grunt and Bower Required**
 
-**2. navigate to Seminary-App**
+**1. In Terminal, Open Seminary-App**
 
         $ cd <Choose Location>
 
-**3. Install Ionic and Cordova**
+**2. Install Ionic and Cordova**
 
         $ npm install -g ionic
        
         $ npm install -g cordova
 
-**3. clone this repository**
+**3. Clone This Repository**
 
         $ cd <Choose Location>
         
         $ git clone https://github.com/deeger/Seminary-App.git
 
-**4. after installation run App**
+**4. After Installation Run App**
 
-        Show in web browser
+        Show in Web Browser
         $ ionic serve
         
-        Run in Cordova emulator
+        Run in Cordova Emulator
         $ ionic platform add ios
         $ ionic build ios
         $ ionic run ios
